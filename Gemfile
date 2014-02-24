@@ -29,4 +29,8 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+gem 'bcrypt-ruby'
+
 gem 'bootstrap-sass'
+gem 'ancestry'
+gem 'twitter-bootstrap-rails', git: 'http://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'

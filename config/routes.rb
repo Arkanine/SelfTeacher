@@ -1,23 +1,21 @@
 Teacher::Application.routes.draw do
   resources :users
+  get 'registration', to: 'users#new'
+  resources :sessions
+  get 'login', to: 'sessions#new'
+  get 'logout', to: 'sessions#destroy'
 
   #shop_routes
   resources :products
 
   # forum_routes
-  resources :rubrics do
-    resources :topics
-  end
-  resources :topics  do
-    resources :comments
-  end
-  resources :comments
 
   # pages_routes
-  root "static_pages#home"
-  get "home", to: "static_pages#home"
-  get "help", to: "static_pages#help"
-  get "about", to: "static_pages#about"
+  root 'static_pages#home'
+  get 'home', to: 'static_pages#home'
+  get 'help', to: 'static_pages#help'
+  get 'about', to: 'static_pages#about'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
