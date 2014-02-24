@@ -1,0 +1,18 @@
+<% provide(:title, "Forum | #{@topic.name}") %>
+
+<div class="page-header">
+  <h3><%= link_to 'Рубрики', rubrics_path %> > <%= link_to @topic.rubric.name, @topic.rubric %> > <%= @topic.name %></h3>
+</div>
+
+<ol>
+  <% if @topic.comments.any? %>
+      <% @topic.comments.each do |c| %>
+          <li>
+            <p>Head: <%= link_to c.name, c %></p>
+            <p>Content: <%= c.content %></p>
+          </li>
+      <% end %>
+  <% end %>
+</ol>
+
+<%= render 'comments/form' %>

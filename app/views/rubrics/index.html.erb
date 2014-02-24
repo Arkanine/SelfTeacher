@@ -1,0 +1,14 @@
+<% provide(:title, 'Forum') %>
+
+<div class="page-header">
+  <h3>Рубрики</h3>
+</div>
+
+<ol>
+  <% @rubrics.each do |rubric| %>
+      <li>
+        <%= link_to rubric.name, rubric %>
+      </li>
+      <br/>
+  <% end %>
+</ol>

@@ -1,0 +1,15 @@
+<% provide(:title, "Forum | #{@rubric.name}") %>
+
+<div class="page-header">
+  <h3><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h3>
+</div>
+
+<ol>
+  <% if @topics.where(rubric_id: @rubric.id).any? %>
+      <% topic = @topics.where(rubric_id: @rubric.id) %>
+      <% @topics.each do |t| %>
+          <li><%= link_to t.name, t %></li>
+      <% end %>
+  <% end %>
+</ol>
+

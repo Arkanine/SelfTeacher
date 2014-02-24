@@ -1,8 +1,20 @@
 Teacher::Application.routes.draw do
+  resources :users
 
+  #shop_routes
   resources :products
 
-  # root "static_pages#home"
+  # forum_routes
+  resources :rubrics do
+    resources :topics
+  end
+  resources :topics  do
+    resources :comments
+  end
+  resources :comments
+
+  # pages_routes
+  root "static_pages#home"
   get "home", to: "static_pages#home"
   get "help", to: "static_pages#help"
   get "about", to: "static_pages#about"
