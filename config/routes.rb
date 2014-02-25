@@ -9,7 +9,9 @@ Teacher::Application.routes.draw do
   resources :products
 
   # forum_routes
-  resources :rubrics
+  resources :rubrics do
+    resources :topics
+  end
   resources :topics
   resources :comments
 
