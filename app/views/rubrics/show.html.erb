@@ -4,12 +4,38 @@
   <h3><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h3>
 </div>
 
-<ol>
-  <% if @topics.where(rubric_id: @rubric.id).any? %>
-      <% topic = @topics.where(rubric_id: @rubric.id) %>
-      <% @topics.each do |t| %>
-          <li><%= link_to t.name, t %></li>
-      <% end %>
-  <% end %>
-</ol>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><%= @rubric.name %></div>
 
+  <table class="table">
+
+    <thread>
+      <tr>
+        <th width="60%">Topics</th>
+        <th width="20%">Last Post</th>
+        <th width="20%">Some else</th>
+      </tr>
+    </thread>
+
+    <% if @topics.where(rubric_id: @rubric.id).any? %>
+      <% topic = @topics.where(rubric_id: @rubric.id) %>
+      <% topic.each do |t| %>
+
+        <tbody>
+          <tr>
+            <td><h4><%= link_to h(t.name), t %></h4>
+            <small><%= t.comments.count %> comments </small><br/>
+             <%=h t.content %></td>
+            <td>Omg</td>
+            <td>Omg</td>
+          </tr>
+        </tbody>
+
+      <% end %>
+    <% end %>
+
+  </table>
+</div>
+
+<%= link_to 'New topic', edit_rubric_path(@rubric), class: 'btn btn-primary' %>

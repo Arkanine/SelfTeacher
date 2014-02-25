@@ -9,6 +9,9 @@ Teacher::Application.routes.draw do
   resources :products
 
   # forum_routes
+  resources :rubrics
+  resources :topics
+  resources :comments
 
   # pages_routes
   root 'static_pages#home'

@@ -34,3 +34,6 @@ gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'ancestry'
 gem 'twitter-bootstrap-rails', git: 'http://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+
+gem 'nested_form'
+gem 'simple_form'

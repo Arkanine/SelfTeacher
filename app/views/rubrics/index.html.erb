@@ -4,11 +4,33 @@
   <h3>Рубрики</h3>
 </div>
 
-<ol>
-  <% @rubrics.each do |rubric| %>
-      <li>
-        <%= link_to rubric.name, rubric %>
-      </li>
-      <br/>
-  <% end %>
-</ol>
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+
+    <table class="table">
+      <thread>
+          <tr>
+            <th width="60%">Forum</th>
+            <th width="20%">Last Post</th>
+            <th width="20%">Some else</th>
+          </tr>
+      </thread>
+
+      <% for rubric in @rubrics %>
+
+      <tbody>
+            <tr>
+              <td><h4><%= link_to h(rubric.name), rubric_path(rubric.id) %></h4>
+                <small><%= rubric.topics.count %> topics</small><br />
+                <%=h rubric.body %></td>
+              <td>Omg</td>
+              <td>Omg</td>
+            </tr>
+      </tbody>
+
+      <% end %>
+    </table>
+</div>

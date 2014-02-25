@@ -1,0 +1,9 @@
+<%= simple_nested_form_for @rubric, :url => url_for(:controller => 'rubrics', :action => 'create') do |f| %>
+  <%= @rubric.name %>
+  <%= f.simple_fields_for :topics, @rubric.topics_for_form do |t| %>
+    <%= t.input :name, label: "Tag Name" %>
+
+    <%= t.input :rubric_id, input_html: {value: @rubric.id}, as: :hidden %>
+  <% end %>
+    <%= f.button :submit %>
+<% end %>
