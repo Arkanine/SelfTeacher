@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.topic = Topic.find(params[:topic_id])
+    @comment.user = current_user
     if @comment.save
       redirect_to topic_path(@comment.topic), notice: 'Есть'
     else

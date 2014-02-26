@@ -13,9 +13,10 @@
     <table class="table">
       <thread>
           <tr>
-            <th width="60%">Forum</th>
-            <th width="20%">Last Post</th>
-            <th width="20%">Some else</th>
+            <th width="40%">Forum</th>
+            <th width="10%">Topics</th>
+            <th width="20%">Last Topic</th>
+            <th width="10%"></th>
           </tr>
       </thread>
 
@@ -24,9 +25,19 @@
       <tbody>
             <tr>
               <td><h4><%= link_to h(rubric.name), rubric_path(rubric.id) %></h4>
-                <small><%= rubric.topics.count %> topics</small><br />
                 <%=h rubric.body %></td>
-              <td>Omg</td>
+              <td><%= rubric.topics.count %></td>
+              <td>
+
+                <% if rubric.topics.any? %>
+                    <% topics = rubric.topics %>
+                    <%= link_to topics.last.name, topics.last %><br>
+                    <%= distance_of_time_in_words_to_now topics.last.created_at %> ago by <%= topics.last.user.name %>
+                <% else %>
+                    <p>Rubric has no topics</p>
+                <% end %>
+
+              </td>
               <td>Omg</td>
             </tr>
       </tbody>

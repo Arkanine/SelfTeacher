@@ -6,15 +6,16 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><%= @rubric.name %></div>
+  <div class="panel-heading"><%= @rubric.body %></div>
 
   <table class="table">
 
     <thread>
       <tr>
-        <th width="60%">Topics</th>
-        <th width="20%">Last Post</th>
-        <th width="20%">Some else</th>
+        <th width="40%">Topics</th>
+        <th width="10%">Comments</th>
+        <th width="20%">Last Comment</th>
+        <th width="20%"></th>
       </tr>
     </thread>
 
@@ -25,10 +26,21 @@
         <tbody>
           <tr>
             <td><h4><%= link_to h(t.name), t %></h4>
-            <small><%= t.comments.count %> comments </small><br/>
-             <%=h t.content %></td>
-            <td>Omg</td>
-            <td>Omg</td>
+              <%=h t.content %></td>
+            <td><%= t.comments.count %></td>
+            <td>
+            <% if t.comments.any? %>
+            <% comments = t.comments %>
+              <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by <%= comments.last.user.name %>
+            <% else %>
+              <p>Topic has no comments</p>
+            <% end %>
+            </td>
+            <td>
+              <% if t.user == current_user %>
+                  <%= link_to 'Редактировать', edit_topic_path(t) %> / <%= link_to 'Удалить', t, method: :delete, data: { confirm: 'Точно-точно?' } %>
+              <% end %>
+            </td>
           </tr>
         </tbody>
 
@@ -38,4 +50,6 @@
   </table>
 </div>
 
-<%= link_to 'New topic', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
+<% if current_user %>
+    <%= link_to 'New topic', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
+<% end %>

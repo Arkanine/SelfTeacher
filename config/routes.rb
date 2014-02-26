@@ -12,7 +12,9 @@ Teacher::Application.routes.draw do
   resources :rubrics do
     resources :topics
   end
-  resources :topics
+  resources :topics do
+    resources :comments
+  end
   resources :comments
 
   # pages_routes

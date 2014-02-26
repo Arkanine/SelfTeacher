@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
                       too_long: 'Слишком длинный!',
                       too_short: 'Должен состоять из 5 символов и более!'
 
-  has_many :companies
+  has_many :comments, dependent: :destroy
+  has_many :topics, dependent: :destroy
 
   def displayed_name
     name.split(' ').count == 2 ? name.split(' ')[0]+' '+name.split(' ')[1][0]+'.' : 'filtered name'

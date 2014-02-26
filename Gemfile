@@ -37,3 +37,5 @@ gem 'twitter-bootstrap-rails', git: 'http://github.com/seyhunak/twitter-bootstra
 
 gem 'nested_form'
 gem 'simple_form'
+
+gem 'kaminari'

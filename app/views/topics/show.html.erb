@@ -4,13 +4,27 @@
   <h3><%= link_to 'Рубрики', rubrics_path %> > <%= link_to @topic.rubric.name, @topic.rubric %> > <%= @topic.name %></h3>
 </div>
 
-<ol>
+<%= sanitize @topic.content.gsub(/\n/, '<br/>') %><br>
+
+<p>
   <% if @topic.comments.any? %>
       <% @topic.comments.each do |c| %>
-          <li>
-            <p>Head: <%= link_to c.name, c %></p>
-            <p>Content: <%= c.content %></p>
-          </li>
+
+        <p>Content: <%= c.content %></p>
+        <%= distance_of_time_in_words_to_now @topic.comments.last.created_at %> ago by <%= c.user.name %><br>
+
       <% end %>
   <% end %>
-</ol>
+</p>
+
+<% if @topic.comments.count > 5 %>
+    <%= paginate @comments %>
+<% end %>
+<br/>
+
+<% if current_user %>
+    <div class="page-header">
+      <h3>Add comment</h3>
+    </div>
+    <%= render 'comments/form' %>
+<% end %>
