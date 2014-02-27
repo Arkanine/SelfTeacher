@@ -11,7 +11,7 @@
       <% @topic.comments.each do |c| %>
 
         <p>Content: <%= c.content %></p>
-        <%= distance_of_time_in_words_to_now @topic.comments.last.created_at %> ago by <%= c.user.name %><br>
+        <%= distance_of_time_in_words_to_now c.created_at %> ago by <%= c.user.name %><br>
 
       <% end %>
   <% end %>

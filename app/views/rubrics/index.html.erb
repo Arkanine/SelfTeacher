@@ -13,10 +13,11 @@
     <table class="table">
       <thread>
           <tr>
+            <th width="10%"></th>
             <th width="40%">Forum</th>
             <th width="10%">Topics</th>
-            <th width="20%">Last Topic</th>
-            <th width="10%"></th>
+            <th width="10%">Comments</th>
+            <th width="20%">Last Comment</th>
           </tr>
       </thread>
 
@@ -24,21 +25,40 @@
 
       <tbody>
             <tr>
-              <td><h4><%= link_to h(rubric.name), rubric_path(rubric.id) %></h4>
-                <%=h rubric.body %></td>
-              <td><%= rubric.topics.count %></td>
-              <td>
+              <td></td>
 
+              <td><p><%= link_to h(rubric.name), rubric_path(rubric.id) %></p>
+                <%=h rubric.body %></td>
+
+              <td><%= rubric.topics.count %></td>
+
+              <td>
+                <% array=[] %>
+                <% rubric.topics.each{|x| array<<x.comments.count} %>
+                <% sum = array.inject{|sum, x| sum+x} %>
+
+                <% if sum != nil %>
+                  <%= sum %>
+                <% else %>
+                  <p>0</p>
+                <% end %>
+              </td>
+
+              <td>
                 <% if rubric.topics.any? %>
-                    <% topics = rubric.topics %>
-                    <%= link_to topics.last.name, topics.last %><br>
-                    <%= distance_of_time_in_words_to_now topics.last.created_at %> ago by <%= topics.last.user.name %>
+                  <% topics = rubric.topics %>
+
+                  <%= link_to topics.last.name, topics.last %><br>
+
+                    <% if topics.last.comments.any? %>
+                      <%= distance_of_time_in_words_to_now topics.last.comments.last.created_at %> ago by <%= topics.last.comments.last.user.name %>
+                    <% end %>
+
                 <% else %>
                     <p>Rubric has no topics</p>
                 <% end %>
-
               </td>
-              <td>Omg</td>
+
             </tr>
       </tbody>
 
