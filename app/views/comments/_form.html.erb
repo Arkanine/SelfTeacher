@@ -5,6 +5,8 @@
         <%= f.text_area :content, placeholder: 'Content', class: 'form-control' %>
       </div>
 
+      <%= f.hidden_field :rubric_id, :value => @topic.rubric_id %>
+
       <div class="form-group">
         <%= f.submit 'Comment' , class: 'btn btn-primary' %>
       </div>

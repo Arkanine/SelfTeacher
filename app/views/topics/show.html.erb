@@ -5,17 +5,17 @@
 </div>
 
 <%= sanitize @topic.content.gsub(/\n/, '<br/>') %><br>
+<br/>
 
-<p>
-  <% if @topic.comments.any? %>
-      <% @topic.comments.each do |c| %>
-
-        <p>Content: <%= c.content %></p>
-        <%= distance_of_time_in_words_to_now c.created_at %> ago by <%= c.user.name %><br>
-
-      <% end %>
+<% if @topic.comments.any? %>
+  <% @topic.comments.each do |c| %>
+    <p>
+      Content: <%= c.content %><br>
+      <%= distance_of_time_in_words_to_now c.created_at %> ago by <%= c.user.name %><br>
+    </p>
   <% end %>
-</p>
+<% end %>
+
 
 <% if @topic.comments.count > 5 %>
     <%= paginate @comments %>
@@ -23,8 +23,8 @@
 <br/>
 
 <% if current_user %>
-    <div class="page-header">
-      <h3>Add comment</h3>
-    </div>
-    <%= render 'comments/form' %>
+  <div class="page-header">
+    <h3>Add comment</h3>
+  </div>
+  <%= render 'comments/form' %>
 <% end %>

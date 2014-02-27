@@ -17,7 +17,7 @@
             <th width="40%">Forum</th>
             <th width="10%">Topics</th>
             <th width="10%">Comments</th>
-            <th width="20%">Last Comment</th>
+            <th width="30%">Last Comment</th>
           </tr>
       </thread>
 
@@ -28,34 +28,26 @@
               <td></td>
 
               <td><p><%= link_to h(rubric.name), rubric_path(rubric.id) %></p>
-                <%=h rubric.body %></td>
+              <%=h rubric.body %></td>
 
               <td><%= rubric.topics.count %></td>
 
-              <td>
-                <% array=[] %>
-                <% rubric.topics.each{|x| array<<x.comments.count} %>
-                <% sum = array.inject{|sum, x| sum+x} %>
-
-                <% if sum != nil %>
-                  <%= sum %>
-                <% else %>
-                  <p>0</p>
-                <% end %>
-              </td>
+              <td><%= rubric.comments.count %></td>
 
               <td>
-                <% if rubric.topics.any? %>
-                  <% topics = rubric.topics %>
+                <% if rubric.comments.any? %>
+                  <% comments = rubric.comments %>
 
-                  <%= link_to topics.last.name, topics.last %><br>
+                  <%= link_to comments.last.topic.name, comments.last.topic %><br>
+                  <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by <%= comments.last.user.name %>
 
-                    <% if topics.last.comments.any? %>
-                      <%= distance_of_time_in_words_to_now topics.last.comments.last.created_at %> ago by <%= topics.last.comments.last.user.name %>
-                    <% end %>
-
+                <% elsif %>
+                  <% if rubric.topics.any? %>
+                    <%= link_to rubric.topics.last.name, rubric.topics.last %><br>
+                    <p>This topic has no comments</p>
+                  <% end %>
                 <% else %>
-                    <p>Rubric has no topics</p>
+                  <p>Empty</p>
                 <% end %>
               </td>
 
