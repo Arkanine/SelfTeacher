@@ -6,9 +6,10 @@ Teacher::Application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   #shop_routes
-  resources :store do
-    resources :products
-  end
+ get "store/index"
+ resources :products
+
+ root to: 'store#index', as: 'store'
 
   # forum_routes
   resources :rubrics do
@@ -25,8 +26,6 @@ Teacher::Application.routes.draw do
   get 'help', to: 'static_pages#help'
   get 'about', to: 'static_pages#about'
 
-  get 'store/index'
-  resources :products
 
 
   # root "static_pages#home"
