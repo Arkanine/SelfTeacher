@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Your Pragmatic Catalog</h1>
+<h1>Books Catalog</h1>
 	<% @products.each do |product| %>
 		<div class="entry">
 			<%= image_tag(product.image_url) %>
@@ -13,3 +13,4 @@
 		</div>
 	</div>
 <% end %>
+<div><h3><%= link_to 'Перечень товаров', products_path %></h3></div>
