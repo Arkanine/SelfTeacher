@@ -10,6 +10,8 @@
  *
  *= require_self
  *= require bootstrap_&_header
+ *= require products
+ *= require store
  */
 #banner {
 	background-image:url('1.jpg');
