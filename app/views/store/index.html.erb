@@ -9,8 +9,11 @@
 			<h3><%= product.title %></h3>
 			<%= sanitize(product.description) %>
 			<div class="price_line">
-				<span class="price"><%= product.price %></span>
+				<span class="price"><%= number_to_currency(product.price) %></span>
 		</div>
 	</div>
 <% end %>
 <div><h3><%= link_to 'Перечень товаров', products_path %></h3></div>
+<!-- <div id="main"> ->
+	<!-<%= yield %> 
+</div> ->
