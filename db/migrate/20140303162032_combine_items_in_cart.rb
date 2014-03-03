@@ -28,5 +28,6 @@ def down
 
 			# удаление исходной записи
 			line_item.destroy
-end
+    end
+  end
 end

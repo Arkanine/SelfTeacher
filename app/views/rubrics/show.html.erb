@@ -25,7 +25,7 @@
 
         <tbody>
           <tr>
-            <td><h4><%= link_to h(t.name), t %></h4>
+            <td><%= link_to h(t.name), t %><br>
               <%=h t.content %></td>
             <td><%= t.comments.count %></td>
             <td>
@@ -33,7 +33,7 @@
             <% comments = t.comments %>
               <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by <%= comments.last.user.name %>
             <% else %>
-              <p>Topic has no comments</p>
+              Topic has no comments
             <% end %>
             </td>
             <td>

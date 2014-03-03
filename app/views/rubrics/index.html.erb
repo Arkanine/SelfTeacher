@@ -27,7 +27,7 @@
             <tr>
               <td></td>
 
-              <td><p><%= link_to h(rubric.name), rubric_path(rubric.id) %></p>
+              <td><%= link_to h(rubric.name), rubric_path(rubric.id) %><br>
               <%=h rubric.body %></td>
 
               <td><%= rubric.topics.count %></td>
@@ -44,10 +44,10 @@
                 <% elsif %>
                   <% if rubric.topics.any? %>
                     <%= link_to rubric.topics.last.name, rubric.topics.last %><br>
-                    <p>This topic has no comments</p>
+                    This topic has no comments
                   <% end %>
                 <% else %>
-                  <p>Empty</p>
+                  Empty
                 <% end %>
               </td>
 
