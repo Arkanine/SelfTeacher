@@ -4,16 +4,16 @@ Teacher::Application.routes.draw do
   resources :carts
 
   resources :users
-  get 'registration', to: 'users#new'
+
   resources :sessions
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
 
   #shop_routes
- get "store/index"
- resources :products
+  get 'store/index'
+  resources :products
 
- root to: 'store#index', as: 'store'
+  root to: 'store#index', as: 'store'
 
   # forum_routes
   resources :rubrics do
@@ -29,13 +29,6 @@ Teacher::Application.routes.draw do
   get 'home', to: 'static_pages#home'
   get 'help', to: 'static_pages#help'
   get 'about', to: 'static_pages#about'
-
-
-
-  # root "static_pages#home"
-  get "home", to: "static_pages#home"
-  get "help", to: "static_pages#help"
-  get "about", to: "static_pages#about"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

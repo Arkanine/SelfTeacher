@@ -9,69 +9,21 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap_&_header
- *= require products
- *= require store
- *= require carts
+ *= require_tree .
  */
-#banner {
-	background-image:url('1.jpg');
-	padding: 10px;
-	border-bottom: 2px solid;
-	font: small-caps 40px/40px "Times New Roman", serif;
-	color: #282;
-	text-align: center;
 
-
- .image { 
-	float: right;
-	height: 45px;
-	width: 45px;
-	}
+body {
+  padding-top: 60px;
 }
 
-#notice {
-	color: #000 !important;
-	border: 2px solid red;
-	padding: 1em;
-	margin-bottom: 2em;
-	background-color: #f0f0f0;
-	font: bold smaller sans-serif;
+#login {
+  padding-right: 20px;
 }
 
-#columns {
-	background: #F0F0F0;
-
-	#main {
-		margin-left: 17em;
-		padding: 1em;
-		background: white;
+.nested_comments {
+  margin-left: 30px;
 }
 
-	#side {
-		float: left;
-		padding: 1em 2em;
-		width: 13em;
-		background: #141;
-
-		ul {
-			padding: 0;
-
-			li {
-				list-style: none;
-				a {
-					color: #bfb;
-					font-size: small;
-				}
-			}
-		}
-	}
+.nested_comments .nested_comments .nested_comments .nested_comments {
+  margin-left: 0;
 }
-
-  .nested_comments {
-    margin-left: 30px;
-  }
-
-  .nested_comments .nested_comments .nested_comments .nested_comments {
-    margin-left: 0;
-  }

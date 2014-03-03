@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email].downcase)
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: "Привет, #{current_user.name}"
+      flash[:success] = "Привет, #{current_user.name}"
+      redirect_to root_url
     else
       flash.now.alert = 'Email или пароль неверны'
       render 'new'
