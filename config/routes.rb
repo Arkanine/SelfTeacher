@@ -1,4 +1,8 @@
 Teacher::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   resources :users
   get 'registration', to: 'users#new'
   resources :sessions
