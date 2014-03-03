@@ -11,6 +11,14 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_cart
+    Cart.find(session[:cart_id])
+  rescue ActiveRecord::RecordNotFound
+    cart = Cart.create
+    session[:cart_id] = cart.id 
+    cart
+  end
+
   def authorize
     redirect_to login_url, alert: 'Not authorized' if current_user.nil?
   end

@@ -1,8 +1,8 @@
-.products {
+
 	table {
 		border-collapse: collapse;
 	}
-}
+
 
  table tr td {
 	padding: 5px;
@@ -45,4 +45,8 @@
 
 .list_line_odd {
 		background: #f8b0f8;
+}
+
+#shop_name {
+	text-align: center;
 }

@@ -1,4 +1,8 @@
 Teacher::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   resources :users
   get 'registration', to: 'users#new'
   resources :sessions
@@ -6,7 +10,10 @@ Teacher::Application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   #shop_routes
-  resources :products
+ get "store/index"
+ resources :products
+
+ root to: 'store#index', as: 'store'
 
   # forum_routes
   resources :rubrics do
@@ -23,10 +30,7 @@ Teacher::Application.routes.draw do
   get 'help', to: 'static_pages#help'
   get 'about', to: 'static_pages#about'
 
-  get 'store/index'
-  resources :products
 
-  root to: 'store#index', as: 'store'
 
   # root "static_pages#home"
   get "home", to: "static_pages#home"

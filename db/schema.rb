@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140228064313) do
+=======
+ActiveRecord::Schema.define(version: 20140303162032) do
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> 85907a9f6523aa9409c720875ebc9d2a408ce537
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -23,7 +32,17 @@ ActiveRecord::Schema.define(version: 20140228064313) do
     t.string   "ancestry"
   end
 
+<<<<<<< HEAD
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
+=======
+  create_table "line_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",   default: 1
+  end
+>>>>>>> 85907a9f6523aa9409c720875ebc9d2a408ce537
 
   create_table "products", force: true do |t|
     t.string   "title"
