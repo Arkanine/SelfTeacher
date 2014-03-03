@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227103314) do
+ActiveRecord::Schema.define(version: 20140228064313) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20140227103314) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rubric_id"
+    t.string   "ancestry"
   end
+
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
 
   create_table "products", force: true do |t|
     t.string   "title"

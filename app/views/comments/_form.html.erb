@@ -1,6 +1,8 @@
 <div class="col-md-4">
   <%= form_for([@topic, @comment], :html => { :class => 'form-vertical answer-form' }) do |f| %>
 
+      <%= f.hidden_field :parent_id %>
+
       <div class="form-group">
         <%= f.text_area :content, placeholder: 'Content', class: 'form-control' %>
       </div>

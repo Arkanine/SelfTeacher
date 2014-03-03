@@ -4,23 +4,17 @@
   <h3><%= link_to 'Рубрики', rubrics_path %> > <%= link_to @topic.rubric.name, @topic.rubric %> > <%= @topic.name %></h3>
 </div>
 
-<%= sanitize @topic.content.gsub(/\n/, '<br/>') %><br>
+<p><%= @topic.user.name %><p>
+    <%= gravatar_for @topic.user %>
+    <%= sanitize @topic.content.gsub(/\n/, '<br/>') %><br>
+    <%= @topic.created_at.strftime('%d.%m.%Y в %H:%M') %>
+<p></p>
+
 <br/>
 
 <% if @topic.comments.any? %>
-  <% @topic.comments.each do |c| %>
-    <p>
-      Content: <%= c.content %><br>
-      <%= distance_of_time_in_words_to_now c.created_at %> ago by <%= c.user.name %><br>
-    </p>
-  <% end %>
+  <%= nested_comments @topic.comments.arrange(:order => :created_at) %>
 <% end %>
-
-
-<% if @topic.comments.count > 5 %>
-    <%= paginate @comments %>
-<% end %>
-<br/>
 
 <% if current_user %>
   <div class="page-header">
