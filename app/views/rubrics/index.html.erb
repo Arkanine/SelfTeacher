@@ -18,7 +18,7 @@
               <th width="40%">Forum</th>
               <th width="10%">Topics</th>
               <th width="10%">Comments</th>
-              <th width="30%">Last Comment</th>
+              <th width="40%">Last Comment</th>
             </tr>
           </thread>
 
@@ -40,15 +40,19 @@
                   <% comments = rubric.comments %>
 
                   <%= link_to comments.last.topic.name, comments.last.topic %><br>
-                  <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by <%= comments.last.user.name %>
+                  <span class='comment_time'>
+                    <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by
+                    <%= link_to comments.last.user.name, comments.last.user %>
+                  </span>
 
                 <% elsif %>
                   <% if rubric.topics.any? %>
                     <%= link_to rubric.topics.last.name, rubric.topics.last %><br>
-                    This topic has no comments
+                    <span class='comment_time'>This topic has no comments</span>
                   <% end %>
+
                 <% else %>
-                  Empty
+                  <span class='comment_time'>Empty</span>
                 <% end %>
               </td>
 

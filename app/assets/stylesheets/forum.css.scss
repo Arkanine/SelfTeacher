@@ -1,0 +1,31 @@
+
+#login {
+  padding-right: 20px;
+}
+
+.media {
+  padding-bottom: 10px;
+  a .gravatar {
+    float: left;
+    margin-left: 20px;
+    height: 50px;
+  }
+}
+
+
+/*topic show*/
+
+.nested_comments {
+  margin-left: 30px;
+}
+
+.nested_comments .nested_comments .nested_comments .nested_comments {
+  margin-left: 0;
+}
+
+
+/*rubric index*/
+.comment_time {
+  font-size: 12px;
+}
+

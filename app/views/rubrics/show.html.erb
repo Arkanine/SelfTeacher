@@ -18,8 +18,8 @@
           <tr>
             <th width="5%"></th>
             <th width="40%">Topics</th>
-            <th width="10%">Comments</th>
-            <th width="20%">Last Comment</th>
+            <th width="15%">Comments</th>
+            <th width="30%">Last Comment</th>
             <th width="10%"></th>
           </tr>
         </thread>
@@ -37,14 +37,15 @@
                 <td>
                 <% if t.comments.any? %>
                 <% comments = t.comments %>
-                  <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by <%= comments.last.user.name %>
+                      <span class='comment_time'><%= distance_of_time_in_words_to_now comments.last.created_at %> ago by</span>
+                      <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
                 <% else %>
-                  Topic has no comments
+                  <span class='comment_time'>topic has no comments</span>
                 <% end %>
                 </td>
                 <td align='center'>
                   <% if t.user == current_user %>
-                      <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> /
+                      <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
                       <%= link_to '', t, method: :delete, data: { confirm: 'Точно-точно?' }, class:'glyphicon glyphicon-trash' %>
                   <% end %>
                 </td>
