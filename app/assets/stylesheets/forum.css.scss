@@ -5,18 +5,24 @@
 
 .media {
   padding-bottom: 10px;
+  background-color: #DEEBD0;
+
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -khtml-border-radius: 6px;
+
   a .gravatar {
     float: left;
-    margin-left: 20px;
+    margin: 0;
+    padding: 0;
     height: 50px;
   }
 }
 
 
 /*topic show*/
-
 .nested_comments {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .nested_comments .nested_comments .nested_comments .nested_comments {
@@ -29,17 +35,15 @@
   font-size: 12px;
 }
 
+#central_col {
+  margin-bottom: 40px;
+  margin-top: 40px;
 
+  background-color: #ffffff;
+  opacity: 0.9;
 
-  #centrsl_col {
-    margin-bottom: 40px;
-    margin-top: 40px;
-
-    background-color: #ffffff;
-    opacity: 0.9;
-
-    border-radius: 6px;
-    -moz-border-radius: 6px;
-    -khtml-border-radius: 6px;
-  }
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -khtml-border-radius: 6px;
+}
 

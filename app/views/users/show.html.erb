@@ -1,13 +1,12 @@
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name%>
-      </h1>
-    </section>
-  </aside>
-  <div class="span8">
+  <div class="col-md-2"></div>
+
+  <div id='central_col' class="col-md-8">
+    <div>
+      <%= gravatar_for @user %>
+      <%= @user.name%>
+    </div>
+
     <% if @user.topics.any? %>
         <h3>Теми (<%= @user.topics.count %>)</h3>
         <ol class="topics">
@@ -18,4 +17,6 @@
 
     <% end %>
   </div>
+
+  <div class="col-md-2"></div>
 </div>

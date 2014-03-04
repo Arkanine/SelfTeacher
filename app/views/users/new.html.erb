@@ -1,17 +1,23 @@
-<div class="page-header">
-  <h4>Регистрация</h4>
-</div>
-<div class="col-md-4">
-  <%= form_for @user do |f| %>
+<div class="row">
+  <div class="col-md-4"></div>
+
+  <div id='central_col' class="col-md-4">
+
+    <div class="page-header">
+      <h4>Регистрация</h4>
+    </div>
+
+
+    <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
-          <div class="error_messages">
-            <h2>Ошибки</h2>
-            <ul>
-              <% @user.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
+        <div class="error_messages">
+          <h2>Ошибки</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
 
       <div class="form-group">
@@ -27,7 +33,10 @@
         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Повторите пароль' %>
       </div>
       <div class="form-group"><%= f.submit "Створити", class: 'btn btn-primary' %></div>
-  <% end %>
+    <% end %>
 
-  Зареэстрованi? <%= link_to 'Увiйдiть', login_path %>
+    <p>Зареэстрованi? <%= link_to 'Увiйдiть', login_path %></p>
+  </div>
+
+  <div class="col-md-4"></div>
 </div>

@@ -1,12 +1,11 @@
-<div class="jumbotron">
-    <div class="media">
-      <a class="pull-left" href="#">
-        <%= gravatar_for(@topic.user) %>
-      </a>
-      <div class="media-body">
-        <p class="media-heading"><%= comment.user.name %></p>
-        <%= comment.content %><br>
-        <%= link_to 'reply', new_topic_comment_path(parent_id: comment, topic_id: @topic.id) %>
-      </div>
-    </div>
+<div class="media">
+  <a class="pull-left">
+    <%= gravatar_for(@topic.user) %>
+  </a>
+  <div class="media-body">
+    <p class="media-heading"><%= comment.user.name %></p>
+    <%= comment.content %><br>
+    <%= link_to 'reply', new_topic_comment_path(parent_id: comment, topic_id: @topic.id) %>
+  </div>
 </div>
+
