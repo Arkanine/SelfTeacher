@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user_profile_button = 'Зарегистрироваться'
+    @button='Зарегистрироваться'
   end
 
   def create
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @user_profile_button = 'Изменить данные'
+    @button = 'Изменить данные'
   end
 
   def update

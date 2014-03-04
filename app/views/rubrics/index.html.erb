@@ -1,34 +1,35 @@
 <% provide(:title, 'Forum') %>
 
-<div class="page-header">
-  <h3>Рубрики</h3>
-</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="page-header">
+      <h3>Рубрики</h3>
+    </div>
 
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Panel heading</div>
 
-
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
-
-    <table class="table">
-      <thread>
-          <tr>
-            <th width="10%"></th>
-            <th width="40%">Forum</th>
-            <th width="10%">Topics</th>
-            <th width="10%">Comments</th>
-            <th width="30%">Last Comment</th>
-          </tr>
-      </thread>
-
-      <% for rubric in @rubrics %>
-
-      <tbody>
+        <table class="table">
+          <thread>
             <tr>
-              <td></td>
+              <th width="5%"></th>
+              <th width="40%">Forum</th>
+              <th width="10%">Topics</th>
+              <th width="10%">Comments</th>
+              <th width="30%">Last Comment</th>
+            </tr>
+          </thread>
+
+          <% for rubric in @rubrics %>
+
+          <tbody>
+            <tr>
+              <td align="center"><span class="glyphicon glyphicon-share-alt"></span></td>
 
               <td><%= link_to h(rubric.name), rubric_path(rubric.id) %><br>
-              <%=h rubric.body %></td>
+                <%=h rubric.body %></td>
 
               <td><%= rubric.topics.count %></td>
 
@@ -52,8 +53,11 @@
               </td>
 
             </tr>
-      </tbody>
+          </tbody>
 
-      <% end %>
-    </table>
+          <% end %>
+        </table>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
 </div>
