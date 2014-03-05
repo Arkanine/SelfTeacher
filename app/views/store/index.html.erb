@@ -2,8 +2,15 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+
+
 <h1>Books Catalog</h1>
+<div id="cart">
+	<%= render @cart %>
+</div>
 	<% @products.each do |product| %>
+		
+
 		<div class="entry">
 			<%= image_tag(product.image_url) %>
 			<h3><%= product.title %></h3>
