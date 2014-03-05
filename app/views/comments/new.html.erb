@@ -1,5 +1,11 @@
-<h4>Reply</h4>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div id='central_col' class="col-md-8">
+    <h4>Reply</h4>
 
-<%= render @comment.parent if @comment.parent  %>
+    <%= render @comment.parent if @comment.parent  %>
 
-<%= render 'form' %>
+    <%= render 'form' %>
+  </div>
+  <div class="col-md-2"></div>
+</div>

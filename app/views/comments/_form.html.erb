@@ -1,16 +1,13 @@
-<div class="col-md-4">
-  <%= form_for([@topic, @comment], :html => { :class => 'form-vertical answer-form' }) do |f| %>
+<%= form_for([@topic, @comment], :html => { :class => 'form-vertical answer-form' }) do |f| %>
+  <%= f.hidden_field :parent_id %>
 
-      <%= f.hidden_field :parent_id %>
+  <div class="form-group">
+    <%= f.text_area :content, rows: '5', placeholder: 'Content', class: 'form-control' %>
+  </div>
 
-      <div class="form-group">
-        <%= f.text_area :content, placeholder: 'Content', class: 'form-control' %>
-      </div>
+  <%= f.hidden_field :rubric_id, :value => @topic.rubric_id %>
 
-      <%= f.hidden_field :rubric_id, :value => @topic.rubric_id %>
-
-      <div class="form-group">
-        <%= f.submit 'Comment' , class: 'btn btn-primary' %>
-      </div>
-  <% end %>
-</div>
+  <div class="form-group">
+    <%= f.submit 'Comment' , class: 'btn btn-primary' %>
+  </div>
+<% end %>
