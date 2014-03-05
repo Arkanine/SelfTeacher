@@ -1,55 +1,70 @@
 <% provide(:title, "Forum | #{@rubric.name}") %>
 
-<div class="page-header">
-  <h3><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h3>
-</div>
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading"><%= @rubric.body %></div>
+<div class="row">
+  <div class="col-md-2"></div>
 
-  <table class="table">
+  <div id='central_col' class="col-md-8">
+    <div class="page-header">
+      <h3><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h3>
+    </div>
 
-    <thread>
-      <tr>
-        <th width="40%">Topics</th>
-        <th width="10%">Comments</th>
-        <th width="20%">Last Comment</th>
-        <th width="20%"></th>
-      </tr>
-    </thread>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @rubric.body %></div>
 
-    <% if @topics.where(rubric_id: @rubric.id).any? %>
-      <% topic = @topics.where(rubric_id: @rubric.id) %>
-      <% topic.each do |t| %>
+      <table class="table">
 
-        <tbody>
+        <thread>
           <tr>
-            <td><h4><%= link_to h(t.name), t %></h4>
-              <%=h t.content %></td>
-            <td><%= t.comments.count %></td>
-            <td>
-            <% if t.comments.any? %>
-            <% comments = t.comments %>
-              <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by <%= comments.last.user.name %>
-            <% else %>
-              <p>Topic has no comments</p>
-            <% end %>
-            </td>
-            <td>
-              <% if t.user == current_user %>
-                  <%= link_to 'Редактировать', edit_topic_path(t) %> / <%= link_to 'Удалить', t, method: :delete, data: { confirm: 'Точно-точно?' } %>
-              <% end %>
-            </td>
+            <th width="5%"></th>
+            <th width="40%">Topics</th>
+            <th width="15%">Comments</th>
+            <th width="30%">Last Comment</th>
+            <th width="10%"></th>
           </tr>
-        </tbody>
+        </thread>
 
+        <% if @topics.where(rubric_id: @rubric.id).any? %>
+          <% topic = @topics.where(rubric_id: @rubric.id) %>
+          <% topic.each do |t| %>
+
+            <tbody>
+              <tr>
+                <td align='center'><span class="glyphicon glyphicon-share-alt"></span></td>
+                <td><%= link_to h(t.name), t %><br>
+                  <%=h t.content %></td>
+                <td><%= t.comments.count %></td>
+                <td>
+                <% if t.comments.any? %>
+                <% comments = t.comments %>
+                      <span class='comment_time'><%= distance_of_time_in_words_to_now comments.last.created_at %> ago by</span>
+                      <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
+                <% else %>
+                  <span class='comment_time'>topic has no comments</span>
+                <% end %>
+                </td>
+                <td align='center'>
+                  <% if t.user == current_user %>
+                      <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
+                      <%= link_to '', t, method: :delete, data: { confirm: 'Точно-точно?' }, class:'glyphicon glyphicon-trash' %>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+
+          <% end %>
+        <% end %>
+
+      </table>
+    </div>
+
+    <p>
+      <% if current_user %>
+        <%= link_to 'New topic', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
       <% end %>
-    <% end %>
+    </p>
+  </div>
 
-  </table>
+  <div class="col-md-2"></div>
+
 </div>
-
-<% if current_user %>
-    <%= link_to 'New topic', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
-<% end %>

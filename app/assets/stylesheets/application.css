@@ -9,10 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap_&_header
- *= require products
- *= require store
- *= require carts
+ *= require bootstrap
  */
 
 

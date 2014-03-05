@@ -11,8 +11,8 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @topic = Topic.find(params[:tag_id])
-    @comment = Comment.new
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.new(parent_id: params[:parent_id], user_id: current_user.id)
   end
 
   def create
@@ -47,7 +47,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:name, :content, :rubric_id)
+    params.require(:comment).permit(:name, :content, :rubric_id, :parent_id)
   end
 
   def set_company

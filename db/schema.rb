@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20140303162032) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rubric_id"
+    t.string   "ancestry"
   end
+
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
 
   create_table "line_items", force: true do |t|
     t.integer  "product_id"
