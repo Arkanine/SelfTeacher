@@ -4,24 +4,31 @@
 
 
 
-<h1>Books Catalog</h1>
-<div id="cart">
-	<%= render @cart %>
-</div>
-	<% @products.each do |product| %>
-		
-
-		<div class="entry">
+<div class="container-fluid">
+		<div class="row-fluid">
+		    <div class="span2">
+		      <%= render @cart %>
+		      	<ul>
+		      		<li><%= link_to 'Products', products_path %></li>
+		      		<li><%= link_to 'Store', store_path %></li>
+		      		<li><%= link_to 'Forum' %></li>
+	      		</ul>
+	    	</div>
+	    	
+	    	<div class="span10">
+	    		<h1>Books Catalog</h1>
+			<% @products.each do |product| %>
 			<%= image_tag(product.image_url) %>
 			<h3><%= product.title %></h3>
 			<%= sanitize(product.description) %>
-			<div class="price_line">
 				<span class="price"><%= number_to_currency(product.price) %></span>
 				<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+			<% end %>
+			<h3><%= link_to 'Перечень товаров', products_path %></h3>
 		</div>
 	</div>
-<% end %>
-<div><h3><%= link_to 'Перечень товаров', products_path %></h3></div>
+</div>
+
 <!-- <div id="main"> ->
 	<!-<%= yield %> 
 </div> ->
