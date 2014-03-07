@@ -42,3 +42,4 @@ gem 'nested_form'
 gem 'simple_form'
 
 gem 'kaminari'
+
