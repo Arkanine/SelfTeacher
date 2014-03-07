@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     @comment.topic = Topic.find(params[:topic_id])
     @comment.user = current_user
     if @comment.save
-      redirect_to topic_path(@comment.topic), notice: 'Есть'
+      redirect_to topic_path(@comment.topic)
     else
       redirect_to :back, alert: 'Проверьте сообщение'
     end
