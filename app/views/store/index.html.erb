@@ -2,30 +2,38 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<div class="container-fluid">
-		<div class="row-fluid">
-		    <div class="span2">
+
+		<div class="row">
+		    <div id="central_col" class="col-md-3">
 		      <%= render @cart %>
-		      	<ul>
+		      	<p><ul>
 		      		<li><%= link_to 'Products', products_path %></li>
 		      		<li><%= link_to 'Store', store_path %></li>
 		      		<li><%= link_to 'Forum' %></li>
-	      		</ul>
+	      		</ul></p>
 	    	</div>
-	    	
-	    	<div class="span10">
+
+
+	    	<div id="central_bar" class="col-md-6">
+	    
 	    		<h1>Books Catalog</h1>
-			<% @products.each do |product| %>
-			<%= image_tag(product.image_url) %>
-			<h3><%= product.title %></h3>
-			<%= sanitize(product.description) %>
-				<span class="price"><%= number_to_currency(product.price) %></span>
-				<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
-			<% end %>
-			<h3><%= link_to 'Перечень товаров', products_path %></h3>
+	    		<tr>
+				<% @products.each do |product| %>
+				
+					
+					<p><%= image_tag(product.image_url) %></p>
+					<p><h3><%= product.title %></h3></p>
+					<p><%= sanitize(product.description) %></p>
+					<p><span class="price"><%= number_to_currency(product.price) %></span></p>
+					<p><%= button_to 'Add to Cart', line_items_path(product_id: product) %></p>
+					<% end %>
+				</tr>
+				<h3><%= link_to 'Перечень товаров', products_path %></h3>
+			</div>
+			<div class="col-md-3">
+			</div>
 		</div>
-	</div>
-</div>
+
 
 <!-- <div id="main"> ->
 	<!-<%= yield %> 
