@@ -19,11 +19,10 @@
 	    		<h1>Books Catalog</h1>
 	    		<tr>
 				<% @products.each do |product| %>
-				
-					
 					<p><%= image_tag(product.image_url) %></p>
 					<p><h3><%= product.title %></h3></p>
-					<p><%= sanitize(product.description) %></p>
+					<%= link_to 'Показать', product_path(product.id) %>
+					<p><%= sanitize( truncate product.description, length: 200) %></p>
 					<p><span class="price"><%= number_to_currency(product.price) %></span></p>
 					<p><%= button_to 'Add to Cart', line_items_path(product_id: product) %></p>
 					<% end %>

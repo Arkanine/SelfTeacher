@@ -13,6 +13,9 @@ Teacher::Application.routes.draw do
   get 'store/index'
   resources :products
 
+  get 'product', to: 'product#show'
+
+
   root to: 'store#index', as: 'store'
 
   # forum_routes
