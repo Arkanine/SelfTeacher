@@ -1,10 +1,9 @@
-<div id="Shop_name"><h1><strong>ONLINE SHOP</strong></h1></div>
+<div id="Shop_adminka">
 <h1>Listing products</h1>
 
 <table>
 <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    
     <td>
       <%= image_tag(product.image_url, class: 'list_image') %>
     </td>
@@ -12,8 +11,7 @@
     <td class="list_description">
       <dl>
         <dt><%= product.title %></dt>
-        <dd><%= truncate(strip_tags(product.description),
-          length: 80) %></dd>
+        <dd><%= (strip_tags(product.description)) %></dd>
       </dl>
     </td>
 
@@ -31,3 +29,4 @@
 <br />
 
 <%= link_to 'New product', new_product_path %>
+</div>
