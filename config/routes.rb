@@ -1,19 +1,24 @@
 Teacher::Application.routes.draw do
-  resources :line_items
+  # teach_routes
+  resources :levels, only: [:show, :index] do
+    resources :lessons
+  end
+  resources :lessons, only: [:show, :index] do
+    resources :exercises
+  end
+  resources :exercises
 
-  resources :carts
-
+  # users_&_sessions_routes
   resources :users
-
   resources :sessions
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
 
   #shop_routes
-  get 'store/index'
+  get 'store', to: 'store#index'
   resources :products
-
-  root to: 'store#index', as: 'store'
+  resources :line_items
+  resources :carts
 
   # forum_routes
   resources :rubrics do
