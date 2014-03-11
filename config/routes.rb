@@ -16,17 +16,10 @@ Teacher::Application.routes.draw do
 
   #shop_routes
   get 'store', to: 'store#index'
+  get 'product', to: 'product#show'
   resources :products
-<<<<<<< HEAD
   resources :line_items
   resources :carts
-=======
-
-  get 'product', to: 'product#show'
-
-
-  root to: 'store#index', as: 'store'
->>>>>>> 1af7e81b63abb860e03583685ab7ce489fbe1443
 
   # forum_routes
   resources :rubrics do
