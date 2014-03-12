@@ -31,33 +31,24 @@
   </div>
 
   <div id='central_col' class="col-md-7">
-    <h4 class='level_h4'>Рівні англійської мови</h4>
-    <ol class='levels_content'>
-    <% @levels.each do |level| %>
-      <% if level.name == 'Початковий рівень: Starter(A1)' %>
-        <li>
-          <%= link_to level.name, level %>
-        </li>
-        <%= render 'levels/starter' %>
-      <% elsif level.name == 'Елементарний рівень: Elementary (А1-А2)' %>
-        <li>
-          <%= link_to level.name, level %>
-        </li>
-        <%= render 'levels/elementary' %>
-      <% elsif level.name == 'Проміжний рівень: Pre-Intermediate (А2-В1)' %>
-        <li>
-          <%= link_to level.name, level %>
-        </li>
-        <%= render 'levels/preintermediate' %>
-      <% elsif level.name == 'Середній рівень: Intermediate (В1)' %>
-        <li>
-          <%= link_to level.name, level %>
-        </li>
-       <%= render 'levels/intermediate' %>
-      <% end %>
+    <% if params[:action] == 'home' && params[:controller] == 'static_pages' %>
+        <%= render 'static_pages/homepage' %>
+    <% elsif params[:action] == '_individual_learn_page' && params[:controller] == 'static_pages' %>
+        <%= render 'static_pages/individual' %>
+    <% elsif params[:action] == 'skype_learn_page' && params[:controller] == 'static_pages' %>
+        <%= render 'static_pages/skype_learn_page' %>
+    <% elsif params[:action] == 'payment' && params[:controller] == 'static_pages' %>
+        <%= render 'static_pages/payment' %>
+    <% elsif params[:action] == 'technique' && params[:controller] == 'static_pages' %>
+        <%= render 'static_pages/technique' %>
+    <% elsif params[:action] == 'training_program' && params[:controller] == 'static_pages' %>
+        <%= render 'static_pages/training_program' %>
+    <% elsif params[:action] == 'index' && params[:controller] == 'levels' %>
+        <%= render 'levels/index' %>
     <% end %>
-    </ol>
   </div>
 
   <div class="col-md-1"></div>
 </div>
+
+

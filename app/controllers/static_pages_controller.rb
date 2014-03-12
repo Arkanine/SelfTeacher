@@ -7,4 +7,22 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def individual_learn_page
+  end
+
+  def skype_learn_page
+  end
+
+  def payment
+  end
+
+  def techniue
+  end
+
+  def training_program
+  end
+
+  def shell
+  end
 end
