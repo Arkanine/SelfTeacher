@@ -31,20 +31,26 @@
   </div>
 
   <div id='central_col' class="col-md-7">
-    <% if params[:action] == 'home' && params[:controller] == 'static_pages' %>
-        <%= render 'static_pages/homepage' %>
-    <% elsif params[:action] == '_individual_learn_page' && params[:controller] == 'static_pages' %>
-        <%= render 'static_pages/individual' %>
-    <% elsif params[:action] == 'skype_learn_page' && params[:controller] == 'static_pages' %>
-        <%= render 'static_pages/skype_learn_page' %>
-    <% elsif params[:action] == 'payment' && params[:controller] == 'static_pages' %>
-        <%= render 'static_pages/payment' %>
-    <% elsif params[:action] == 'technique' && params[:controller] == 'static_pages' %>
-        <%= render 'static_pages/technique' %>
-    <% elsif params[:action] == 'training_program' && params[:controller] == 'static_pages' %>
-        <%= render 'static_pages/training_program' %>
-    <% elsif params[:action] == 'index' && params[:controller] == 'levels' %>
-        <%= render 'levels/index' %>
+    <% if current_page?(controller: 'static_pages', action: 'home') %>
+      <%= render 'static_pages/content_pages/homepage' %>
+
+    <% elsif current_page?(controller: 'static_pages', action: 'individual_learn_page') %>
+      <%= render 'static_pages/content_pages/individual_learn_page' %>
+
+    <% elsif current_page?(controller: 'static_pages', action: 'skype_learn_page') %>
+      <%= render 'static_pages/content_pages/skype_learn_page' %>
+
+    <% elsif current_page?(controller: 'static_pages', action: 'payment') %>
+      <%= render 'static_pages/content_pages/payment' %>
+
+    <% elsif current_page?(controller: 'static_pages', action: 'technique') %>
+      <%= render 'static_pages/content_pages/technique' %>
+
+    <% elsif current_page?(controller: 'static_pages', action: 'training_program') %>
+      <%= render 'static_pages/content_pages/training_program' %>
+
+    <% elsif current_page?(controller: 'levels', action: 'index') %>
+      <%= render 'static_pages/content_pages/levels_page' %>
     <% end %>
   </div>
 
