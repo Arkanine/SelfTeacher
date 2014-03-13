@@ -1,1 +1,42 @@
-<%= render 'static_pages/shell' %>
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <div class='teach_nav'>
+      <div id='left_col' class="list-group">
+        <a href="#" class="list-group-item active">
+          SelfTeacher
+        </a>
+        <%= link_to 'Головна', root_path, class:'list-group-item' %>
+
+        <div class="btn-group">
+          <a href="#" class="list-group-item" data-toggle="dropdown">Курси англійської
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu list-inline" role="menu">
+            <li><%= link_to 'Індивідуальні заняття', individual_learn_page_path %></li>
+            <li><%= link_to 'Заняття по скайп', skype_learn_page_path %></li>
+          </ul>
+        </div>
+
+        <%= link_to 'Вартість та оплата', payment_path, class:'list-group-item' %>
+        <%= link_to 'Методика навчання', technique_path, class:'list-group-item' %>
+        <%= link_to 'Програми навчання', training_program_path, class:'list-group-item' %>
+        <%= link_to 'Рівні англійської', levels_path, class:'list-group-item' %>
+        <a href="#" class="list-group-item">Пройти тест</a>
+        <a href="#" class="list-group-item">Про нас</a>
+        <%= link_to 'Відгуки', Topic.find_by_name('Відгуки'), class:'list-group-item' %>
+        <a href="#" class="list-group-item">Контакти</a>
+      </div>
+    </div>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Вартість та оплата</h4>
+    <ul class='levels_content'>
+
+
+
+    </ul>
+    </div>
+  <div class="col-md-1"></div>
+</div>

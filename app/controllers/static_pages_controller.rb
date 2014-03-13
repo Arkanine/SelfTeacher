@@ -22,7 +22,4 @@ class StaticPagesController < ApplicationController
 
   def training_program
   end
-
-  def shell
-  end
 end
