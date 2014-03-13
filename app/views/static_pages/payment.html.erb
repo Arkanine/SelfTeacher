@@ -1,41 +1,64 @@
 <div id='teach_pages' class="row">
   <div class="col-md-1"></div>
   <div class="col-md-3">
-    <div class='teach_nav'>
-      <div id='left_col' class="list-group">
-        <a href="#" class="list-group-item active">
-          SelfTeacher
-        </a>
-        <%= link_to 'Головна', root_path, class:'list-group-item' %>
-
-        <div class="btn-group">
-          <a href="#" class="list-group-item" data-toggle="dropdown">Курси англійської
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu list-inline" role="menu">
-            <li><%= link_to 'Індивідуальні заняття', individual_learn_page_path %></li>
-            <li><%= link_to 'Заняття по скайп', skype_learn_page_path %></li>
-          </ul>
-        </div>
-
-        <%= link_to 'Вартість та оплата', payment_path, class:'list-group-item' %>
-        <%= link_to 'Методика навчання', technique_path, class:'list-group-item' %>
-        <%= link_to 'Програми навчання', training_program_path, class:'list-group-item' %>
-        <%= link_to 'Рівні англійської', levels_path, class:'list-group-item' %>
-        <a href="#" class="list-group-item">Пройти тест</a>
-        <a href="#" class="list-group-item">Про нас</a>
-        <%= link_to 'Відгуки', Topic.find_by_name('Відгуки'), class:'list-group-item' %>
-        <a href="#" class="list-group-item">Контакти</a>
-      </div>
-    </div>
+    <%= render 'static_pages/left_menue' %>
   </div>
 
   <div id='central_col' class="col-md-7">
     <h4 class='level_h4'>Вартість та оплата</h4>
     <ul class='levels_content'>
 
+      <div id='pay_table' class="panel panel-default">
+        <div class="panel-heading">Вартість та оплата навчання</div>
 
+        <table class="table">
+          <thread>
+            <tr>
+              <th width="40%">Тип занять</th>
+              <th width="30%">Ціна</th>
+              <th width="30%">Тривалість</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>Індивідуальні заняття</td>
+              <td>
+                $30/урок (1 особа)<br>
+                $40/урок (2 особи)
+              </td>
+              <td>
+                Урок – 90 хвилин<br>
+                Рівень – 20-50 уроків
+              </td>
+            </tr>
+            <tr>
+              <td>Уроки англійської по Skype (скайп)</td>
+              <td>
+                $30/урок (1 особа)<br>
+                $40/урок (2 особи)
+              </td>
+              <td>
+                Урок – 90 хвилин<br>
+                Рівень – 20-50 уроків
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+      <h5>Як сплачувати за уроки англійської?</h5>
+      <p>При вивченні англійської мови індивідуально (Черкаси, Україна) оплата за навчання може здійснюватися поурочно, щотижня або помісячно. При вивченні англійської мови по Skype (скайп), оплата за навчання вноситься авансом за декілька уроків: мінімум - 4 уроки. Перший урок - пробний і є безкоштовним. Вартість підручників не входить у вартість навчання.</p>
+      <h5>За уроки англійської мови можна сплатити одним із наступних способів:</h5>
+      <li><%= render 'static_pages/gliph' %>Готівкою (для Монреаля, Канада)</li>
+      <li><%= render 'static_pages/gliph' %>Банківським переказом через систему Western Union</li>
+      <li><%= render 'static_pages/gliph' %>Переказом через систему PayPal</li>
+
+      <h5>Хочете вивчати англійську мову зі мною?</h5>
+      <li><%= render 'static_pages/gliph' %>Пройдіть <span><%= link_to 'тест', '#' %></span>, щоб визначити свій рівень англійської.</li>
+      <li><%= render 'static_pages/gliph' %>Зв'яжіться зі мною по телефону:  або по email: та вкажіть: 1. свій рівень англійської мови; 2. бажаний напрямок вивчення англійської (бізнес, загальна англійська і т.д.); 3. усі можливі дні та час навчання; 4. бажану дату проведення пробного уроку; 5. країну та місто проживання (мені це потрібно для з'ясування Вашого часового поясу). Я зв'яжуся з Вами так швидко, як тільки зможу. Зверніть увагу, що індивідуальні заняття з англійської проходять у місті Монреаль, Канада. Для жителів інших міст можливі лише заняття з англійської по скайп.</li>
+      <li><%= render 'static_pages/gliph' %>Почніть вивчати англійську мову в зручний для Вас час після пробного уроку та внесення оплати.</li>
+
+      <p>Успіхів у навчанні!</p>
     </ul>
     </div>
   <div class="col-md-1"></div>
