@@ -1,0 +1,39 @@
+<footer id='footer'>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10">
+      <div class="col-md-4">
+        <ul class='footer_nav'>
+          <li>начання</li>
+          <li><%= link_to 'розпочати навчання', about_path %></li>
+          <li><%= link_to 'курси англійської', rubrics_path %></li>
+          <li><%= link_to 'оплата навчання', store_path %></li>
+          <li><%= link_to 'проти тест', store_path %></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <ul class='footer_nav'>
+          <li>магазин книг</li>
+          <li><%= link_to 'найпопулярніше', contact_path  %></li>
+          <li><%= link_to 'знайти літературу', about_path %></li>
+          <li><%= link_to 'розпродаж', rubrics_path %></li>
+          <li><%= link_to 'корзина', store_path %></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <ul class='footer_nav'>
+          <li>форум</li>
+          <li><%= link_to 'остання тема', contact_path  %></li>
+          <li><%= link_to 'правила форуму', about_path %></li>
+          <li><%= link_to 'відгуки користувачів', rubrics_path %></li>
+          <li><%= link_to 'всі рубрики', store_path %></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-1"></div>
+  </nav>
+</footer>

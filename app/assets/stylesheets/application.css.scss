@@ -29,10 +29,40 @@ body {
 #header {
   .navbar {
     background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.80);
+    background: rgba(0, 0, 0, 0.9);
   }
 }
 
+#footer {
+
+  .navbar {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.9);
+    margin-bottom: 0;
+    margin-top: 40px;
+    min-height: 100px;
+
+    .footer_nav {
+      padding-top:10px;
+      margin-left: 40px;
+      list-style-type: none;
+      li {
+        color: #3E7DE6;
+        a {
+          color: #C3C3C3;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  min-height: 455px;
+}
+
+.navbar-brand {
+  margin-right: 60px;
+}
 
 
 
