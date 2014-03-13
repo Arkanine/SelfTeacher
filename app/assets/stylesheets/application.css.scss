@@ -28,28 +28,41 @@ body {
 
 #header {
   .navbar {
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.9);
+    background: rgb(50,50,50);
+    background: rgba(50,50,50, 0.9);
+    border: none;
+    a {
+      color: #C3C3C3;
+    }
+    a:hover {
+      color: #ffffff;
+    }
   }
 }
 
 #footer {
-
   .navbar {
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.9);
+    background: rgb(50,50,50);
+    background: rgba(50,50,50, 0.9);
+    border: none;
     margin-bottom: 0;
     margin-top: 40px;
     min-height: 100px;
+    padding-top:10px;
 
     .footer_nav {
-      padding-top:10px;
-      margin-left: 40px;
+      margin-left: 50px;
       list-style-type: none;
       li {
         color: #3E7DE6;
         a {
           color: #C3C3C3;
+          font-size: 12px;
+        }
+        a:hover {
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 14px;
         }
       }
     }
@@ -62,6 +75,15 @@ body {
 
 .navbar-brand {
   margin-right: 60px;
+}
+
+#main_footer_menu {
+  padding-bottom:10px;
+}
+
+#central_footer_menu {
+  border-left: 1px solid #474747;
+  border-right: 1px solid #474747;
 }
 
 
