@@ -1,4 +1,6 @@
 Teacher::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # teach_routes
   resources :levels, only: [:show, :index] do
     resources :lessons
@@ -16,7 +18,8 @@ Teacher::Application.routes.draw do
 
   #shop_routes
   get 'store', to: 'store#index'
-  get 'product', to: 'product#show'
+
+  
   resources :products
   resources :line_items
   resources :carts
