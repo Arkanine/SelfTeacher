@@ -4,5 +4,7 @@ class LevelsController < ApplicationController
   end
 
   def show
+    @level = Level.find(params[:id])
+    @lessons = Lesson.all
   end
 end

@@ -1,2 +1,26 @@
-<h1>Levels#show</h1>
-<p>Find me in app/views/levels/show.html.erb</p>
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render 'static_pages/left_menue' %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Початковий рівень</h4>
+    <ul class='levels_content'>
+      <% if @level.lessons.any? %>
+        <ol>
+          <% @level.lessons.each do |lesson| %>
+            <li><%= link_to lesson.name, lesson %>
+              <div class='lesson_sontent'><%= lesson.content %></div>
+            </li>
+        <% end %>
+        </ol>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+
+
+
