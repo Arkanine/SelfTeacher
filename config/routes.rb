@@ -18,11 +18,6 @@ Teacher::Application.routes.draw do
 
   #shop_routes
   get 'store', to: 'store#index'
-<<<<<<< HEAD
-=======
-
-  
->>>>>>> 0593bef5a5e47c7bedb5593f05a7fe783f55af1d
   resources :products
   resources :line_items
   resources :carts

@@ -14,6 +14,14 @@ private
 			errors.add(:base, 'существуют товарные позиции')
 			return false
 		end
-	end
+  end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 
 end

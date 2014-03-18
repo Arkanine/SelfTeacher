@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.email = params[:user][:email].downcase
     if @user.save
-      flash[:success] = 'Welcome!'
       session[:user_id] = @user.id
       redirect_to @user
     else
@@ -32,7 +31,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
       session[:user_id] = @user.id
       redirect_to @user
     else
