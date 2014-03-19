@@ -1,4 +1,5 @@
 Teacher::Application.routes.draw do
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # teach_routes
@@ -28,6 +29,13 @@ Teacher::Application.routes.draw do
     resources :comments
   end
   resources :comments
+
+  # test_routes
+  resources :tests do
+    member do
+      post 'send_results' => 'tests#send_results'
+    end
+  end
 
   # pages_routes
   root 'static_pages#home'

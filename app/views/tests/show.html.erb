@@ -1,0 +1,35 @@
+
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render 'static_pages/left_menue' %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'><%= @test.name %></h4>
+
+    <div class='levels_content'>
+        <%= form_tag(send_results_test_path, method: :post) do %>
+            <% @questions.each do |question| %>
+                <h5><%= question.content %></h5>
+
+              <% question.answers.each do |answer| %>
+                <%= fields_for :answers, question do |f| %>
+                  <%= radio_button('result', question.id, answer.id) %>
+                <% end %>
+                <%= answer.content %><br>
+              <% end %>
+              <hr>
+            <% end %>
+            <%= submit_tag 'Отримати результат', class:'btn btn-primary' %>
+
+        <% end %>
+
+     </div>
+  </div>
+
+  <div class="col-md-1"></div>
+</div>
+
+
+

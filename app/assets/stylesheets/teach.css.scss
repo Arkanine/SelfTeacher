@@ -26,7 +26,7 @@
 .levels_content {
   list-style-type: none;
 
-  padding-top: 15px;
+  padding:20px 40px 40px 40px;
   margin-bottom: 15px;
   background-color: white;
 
@@ -41,7 +41,6 @@
   p {
     text-indent: 1.5em;
     text-align: justify; /* Выравнивание по ширине */
-    padding-right: 20px;
   }
 
   h5 {
@@ -51,7 +50,6 @@
   }
 
   li {
-    padding:0 20px 10px 0;
     text-align: justify;
   }
 }
@@ -91,3 +89,4 @@
 .lm_dropdown {
   width: 100%;
 }
+

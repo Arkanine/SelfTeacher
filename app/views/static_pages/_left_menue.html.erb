@@ -19,7 +19,7 @@
     <%= link_to 'Методика навчання', technique_path, class:'list-group-item' %>
     <%= link_to 'Програми навчання', training_program_path, class:'list-group-item' %>
     <%= link_to 'Рівні англійської', levels_path, class:'list-group-item' %>
-    <a href="#" class="list-group-item">Пройти тест</a>
+    <%= link_to 'Пройти тест', Test.find_by_name('Тест на знання ангійської  мови'), class:'list-group-item' %>
     <%= link_to 'Про нас', about_path, class:'list-group-item' %>
     <%= link_to 'Контакти', contact_path, class:'list-group-item' %>
     <%= link_to 'Відгуки', Topic.find_by_name('Відгуки'), class:'list-group-item' %>

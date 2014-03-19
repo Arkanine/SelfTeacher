@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
   has_many :topics, dependent: :destroy
+  has_many :results
 
   def displayed_name
     name.split(' ').count == 2 ? name.split(' ')[0]+' '+name.split(' ')[1][0]+'.' : 'filtered name'
