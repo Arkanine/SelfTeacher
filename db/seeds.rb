@@ -35,7 +35,7 @@ Test.create(name:'Тест на знання ангійської  мови')
 
 Question.create(content:'I have bought a computer, ________ is more expensive than this one.', test_id:1)
 Answer.create(content:'who', question_id:1)
-Answer.create(content:'which', question_id:1, isright: true)
+Answer.create(content:'which', question_id:1)
 Answer.create(content:'that', question_id:1, isright: true)
 
 Question.create(content:'There ________ some books on the shelves.', test_id:1)

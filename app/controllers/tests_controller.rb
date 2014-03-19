@@ -7,6 +7,7 @@ class TestsController < ApplicationController
     @tests = Test.all
     @question_count = Question.all.count
     @result_count = Result.where(score:1).count
+    @errors = Result.where(score:nil)
 
     if @result_count.to_i <= 20
       @knowledge = Level.find_by name:'Початковий рівень: Starter(A1)'

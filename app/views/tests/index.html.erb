@@ -1,32 +1,36 @@
-<h1>Listing tests</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render 'static_pages/left_menue' %>
+  </div>
 
-  <tbody>
-    <% @tests.each do |test| %>
-      <tr>
-        <td><%= test.name %></td>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Результат</h4>
 
-<br>
+    <div class='levels_content'>
 
-<%= link_to 'New Test', new_test_path %>
+      <h4>
+        Ваш рівень знать: <%= link_to @knowledge.name, @knowledge %>
+      </h4>
+      Правильних відповідей: <span class='wrong_answer'><%= @result_count %></span>,
+      всього:                <span class='right_answer'><%= @question_count %></span>
+      <h5>Були допущені наступні помилки:</h5>
 
 
-<h4>Ваш рівень знать: <%= @knowledge.name %></h4>
-<p>Правильних відповідей:<%= @result_count %>, всього: <%= @question_count %></p>
+      <% @errors.each do |error| %>
+        <p>
+          <%= error.answer.question.id %>. <%= error.answer.question.content %><br>
+          Отримана відповідь: <span class='wrong_answer'><%= error.answer.content %></span><br>
+          <% error.answer.question.answers.where(isright:true).each do |t| %>
+              Правильна відповідь: <span class='right_answer'><%= t.content %></span><br>
+          <% end %>
+        </p>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="col-md-1"></div>
+</div>
 
