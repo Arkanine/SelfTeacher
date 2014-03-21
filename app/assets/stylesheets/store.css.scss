@@ -138,7 +138,7 @@
 
 hr {
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 #new_header {
@@ -146,6 +146,29 @@ hr {
   font-size: 16px;
 }
 
-.product_image {
-  padding-top:5px;
+.thumbnail {
+  .product_image {
+    padding-top:5px;
+  }
+  .caption {
+    h5 {
+      padding-bottom: 5px;
+      margin: 0;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+    #price {
+      color: #3978AF;
+    }
+    .btn-xlarge {
+      padding: 6px;
+      font-size: 14px; //change this to your desired size
+      line-height: normal;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+    }
+  }
 }
