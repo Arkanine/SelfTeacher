@@ -1,56 +1,36 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
 
-<h1>Популярная литература</h1>
-<div id="myCarousel" class="carousel slide">
-    <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="active item"><img src="/images/3.jpg" alt="Book Carousel" /></div>
-          <div class="item"><img src="/images/4.jpg" alt="Book Carousel" /></div>
-          <div class="item"><img src="/images/3.jpg" alt="Book Carousel" /></div>
-          <div class="item"><img src="/images/2.jpg" alt="Book Carousel" /></div>
-          <div class="item"><img src="/images/1.jpg" alt="Book Carousel" /></div>
-          <div class="item"><img src="/images/5.jpg" alt="Book Carousel" /></div>
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render @cart %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Каталог книг</h4>
+    <div class='levels_content'>
+      <span id='new_header'>НОВИНКИ</span>
+      <hr>
+      <div class='row'>
+        <% @last_products.each do |product| %>
+        <div class="col-sm-12 col-md-4">
+          <div class="thumbnail">
+
+            <%= image_tag(product.image, width:'100%') %>
+            <div class="caption">
+              <h5><%= product.title %></h5>
+              <p><%= sanitize( truncate product.description, length: 100) %></p>
+              <p>Price: <%= number_to_currency(product.price) %></p>
+              <p><%= button_to 'Add to Cart', line_items_path(product_id: product), class:'btn btn-primary' %></p>
+            </div>
+
+          </div>
+        </div>
+        <% end %>
       </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
- </div>
 
-		<div class="row">
-		    <div id="central_coll" class="col-md-3">
-		      <%= render @cart %>
-		      	<p><ul>
-		      		<li><%= link_to 'Products', products_path %></li>
-		      		<li><%= link_to 'Магазин', store_path %></li>
-		      		<li><%= link_to 'Форум', rubrics_path %></li>
-	      		</ul></p>
-	    	</div>
+      <h3><%= link_to 'Перечень товаров', products_path %></h3>
 
-
-	    	<div id="central_bar" class="col-md-6">
-	    
-	    		<h1>Каталог книг</h1>
-	    		<div id="frame">
-	    		<tr>
-				<% @products.each do |product| %>
-					<p><%= image_tag(product.image_url) %></p>
-					<p><h3><%= product.title %></h3></p>
-					<%= link_to 'Показать', product_path(product.id) %>
-					<p><%= sanitize( truncate product.description, length: 200) %></p>
-					<p><span class="price"><%= number_to_currency(product.price) %></span></p>
-					<p><%= button_to 'Add to Cart', line_items_path(product_id: product) %></p>
-					<% end %>
-				</tr>
-				<h3><%= link_to 'Перечень товаров', products_path %></h3>
-			</div>
-			</div>
-			<div class="col-md-3">
-			</div>
-		</div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 0593bef5a5e47c7bedb5593f05a7fe783f55af1d
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>

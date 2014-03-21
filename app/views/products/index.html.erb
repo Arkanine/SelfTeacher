@@ -1,32 +1,41 @@
-<div id="Shop_adminka">
-<h1>Listing products</h1>
 
-<table>
-<% @products.each do |product| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td>
-      <%= image_tag(product.image_url, class: 'list_image') %>
-    </td>
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
 
-    <td class="list_description">
-      <dl>
-        <dt><%= product.title %></dt>
-        <dd><%= (strip_tags(product.description)) %></dd>
-      </dl>
-    </td>
+  </div>
 
-    <td class="list_actions">
-      <%= link_to 'Show', product %><br/>
-      <%= link_to 'Edit', edit_product_path(product) %><br/>
-      <%= link_to 'Destroy', product,
-        data: { confirm: 'Text' },
-        method: :delete %>
-    </td>
-  </tr>
-<% end %>
-</table>
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Каталог книг</h4>
+    <div class='levels_content'>
+      <h1>Listing products</h1>
 
-<br />
+      <table>
+        <% @products.each do |product| %>
+            <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+              <td>
+                <%= image_tag(product.image_url, size:'100x150') %>
+              </td>
 
-<%= link_to 'New product', new_product_path %>
+              <td class="list_description">
+                <dl>
+                  <dt><%= product.title %></dt>
+                  <dd><%= (strip_tags(product.description)) %></dd>
+                </dl>
+              </td>
+
+              <td class="list_actions">
+                <%= link_to 'Show', product %><br/>
+                <%= link_to 'Edit', edit_product_path(product) %><br/>
+                <%= link_to 'Destroy', product,
+                            data: { confirm: 'Text' },
+                            method: :delete %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+      <%= link_to 'New product', new_product_path %>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
 </div>
