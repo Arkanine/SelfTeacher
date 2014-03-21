@@ -44,3 +44,8 @@ gem 'simple_form'
 
 gem 'kaminari'
 
+gem 'rmagick'
+gem 'carrierwave'
+
+gem 'letsrate'
+

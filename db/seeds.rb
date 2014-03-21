@@ -1,5 +1,4 @@
 Product.delete_all
-# . . .
 Product.create(title: 'Programming Ruby 1.9',
 	description:
 		%{<p>
@@ -9,7 +8,37 @@ Product.create(title: 'Programming Ruby 1.9',
 		</p>},
 	image_url: 'ruby.jpg',
 	price: 49.95)
-# . . .
+
+Product.create(title:'Book1', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'1.89' )
+Product.create(title:'Book2', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'4.89' )
+Product.create(title:'Book3', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'10.89' )
+Product.create(title:'Book4', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'15.89' )
+Product.create(title:'Book5', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'20.89' )
+Product.create(title:'Book6', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'25.89' )
+Product.create(title:'Book7', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'30.89' )
+Product.create(title:'Book8', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'35.89' )
+Product.create(title:'Book9', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'40.89' )
+Product.create(title:'Book10', description:'Ruby is the fastest growing and most exciting dynamic language
+			out there. If you need to get working programs delivered fast,
+			you should add Ruby to your toolbox.', price:'50.89' )
 
 User.create(name:'Zabila Roman', email:'zabila.r@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 

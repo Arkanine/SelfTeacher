@@ -6,33 +6,25 @@
 
   <div id='central_col' class="col-md-7">
     <h4 class='level_h4'>Рівні англійської мови</h4>
-    <ul class='levels_content'>
+    <div class='levels_content'>
 
       <% @levels.each do |level| %>
         <% if level.name == 'Початковий рівень: Starter(A1)' %>
-          <li>
-            <%= link_to level.name, level %>
-          </li>
+          <h4><%= link_to level.name, level %></h4>
           <%= render 'levels/starter' %>
         <% elsif level.name == 'Елементарний рівень: Elementary (А1-А2)' %>
-          <li>
-            <%= link_to level.name, level %>
-          </li>
+          <h4><%= link_to level.name, level %></h4>
           <%= render 'levels/elementary' %>
         <% elsif level.name == 'Проміжний рівень: Pre-Intermediate (А2-В1)' %>
-          <li>
-            <%= link_to level.name, level %>
-          </li>
+          <h4><%= link_to level.name, level %></h4>
           <%= render 'levels/preintermediate' %>
         <% elsif level.name == 'Середній рівень: Intermediate (В1)' %>
-          <li>
-            <%= link_to level.name, level %>
-          </li>
+          <h4><%= link_to level.name, level %></h4>
           <%= render 'levels/intermediate' %>
         <% end %>
       <% end %>
 
-    </ul>
+    </div>
   </div>
   <div class="col-md-1"></div>
 </div>

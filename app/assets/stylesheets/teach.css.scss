@@ -23,34 +23,58 @@
   background-color: red;
 }
 
-.levels_content {
-  list-style-type: none;
+#central_col {
+  padding-bottom: 15px;
 
-  padding: 18px 40px 40px 40px;
-  margin-bottom: 15px;
-  background-color: white;
+  .levels_content {
+    list-style-type: none;
 
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-  -khtml-border-radius: 6px;
+    padding: 20px 40px;
+    background-color: white;
 
-  #pay_table {
-    margin: 5px 20px 0 0;
-  }
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -khtml-border-radius: 6px;
 
-  p {
-    text-indent: 1.5em;
-    text-align: justify; /* Выравнивание по ширине */
-  }
+    h4 {
+      padding-left: 20%;
+    }
 
-  h5 {
-    text-indent: 1.5em;
-    color: maroon; /* Цвет текста */
-    font-weight: 600;
-  }
+    li {
+      padding-bottom: 10px;
+    }
 
-  li {
-    text-align: justify;
+    .level_info {
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+          padding:0;
+        }
+        h5 {
+          padding-right: 20px;
+        }
+      }
+    }
+
+    #pay_table {
+      margin: 5px 20px 0 0;
+    }
+
+    p {
+      text-indent: 1.5em;
+      text-align: justify; /* Выравнивание по ширине */
+    }
+
+    h5 {
+      text-indent: 1.5em;
+      color: maroon; /* Цвет текста */
+      font-weight: 600;
+    }
+
+    li {
+      text-align: justify;
+    }
   }
 }
 
@@ -63,17 +87,6 @@
 #glyph_for_teach {
   padding-right: 10px;
   color: #1378CA;
-}
-
-
-.level_info {
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    h5 {
-      padding-right: 20px;
-    }
-  }
 }
 
 .main_word {

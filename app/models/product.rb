@@ -5,6 +5,8 @@ class Product < ActiveRecord::Base
 
 	before_destroy :ensure_not_referenced_by_any_line_item
 
+  letsrate_rateable 'title'
+
 private
 
 	def ensure_not_referenced_by_any_line_item
