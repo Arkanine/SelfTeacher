@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140321072445) do
+=======
+ActiveRecord::Schema.define(version: 20140320161332) do
+>>>>>>> 1ef419c4f3cfd618dd32ecde2612a3b4f766a8f1
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -102,6 +106,16 @@ ActiveRecord::Schema.define(version: 20140321072445) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity",   default: 1
+    t.integer  "order_id"
+  end
+
+  create_table "orders", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "pay_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|

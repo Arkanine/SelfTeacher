@@ -1,6 +1,11 @@
 Teacher::Application.routes.draw do
 
+<<<<<<< HEAD
   post '/rate' => 'rater#create', :as => 'rate'
+=======
+  resources :orders
+
+>>>>>>> 1ef419c4f3cfd618dd32ecde2612a3b4f766a8f1
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # teach_routes
