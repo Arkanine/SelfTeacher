@@ -11,6 +11,7 @@ ActiveAdmin.register Product do
     end
     column :created_at
     column :updated_at
+    column :order
     default_actions
   end
   
