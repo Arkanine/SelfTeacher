@@ -1,4 +1,3 @@
-
 <div id='teach_pages' class="row">
   <div class="col-md-1"></div>
   <div class="col-md-3">
@@ -15,7 +14,7 @@
         <div class="col-sm-12 col-md-4">
           <div class="thumbnail">
 
-            <%= image_tag(product.image, width:'100%') %>
+            <%= image_tag(product.image_url(:thumb), width:'100%', height:'200') %>
             <div class="caption">
               <h5><%= product.title %></h5>
               <p><%= sanitize( truncate product.description, length: 100) %></p>

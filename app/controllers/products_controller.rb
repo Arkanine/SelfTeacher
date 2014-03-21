@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.search(params[:search])
-    @last_products = @products.order('created_at desc').reverse[0..6]
   end
 
   # GET /products/1
@@ -70,6 +69,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image, :price)
+      params.require(:product).permit(:title, :description, :image, :price, :remote_image_url)
     end
 end
