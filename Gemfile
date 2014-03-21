@@ -47,5 +47,6 @@ gem 'kaminari'
 gem 'rmagick'
 gem 'carrierwave'
 
-gem 'letsrate'
+gem 'rmagick'
+gem 'carrierwave'
 

@@ -15,5 +15,4 @@ class User < ActiveRecord::Base
     name.split(' ').count == 2 ? name.split(' ')[0]+' '+name.split(' ')[1][0]+'.' : 'filtered name'
   end
 
-  letsrate_rater
 end

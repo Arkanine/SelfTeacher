@@ -1,13 +1,13 @@
 Product.delete_all
 Product.create(title: 'Programming Ruby 1.9',
-	description:
-		%{<p>
+               description:
+                   %{<p>
 			Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
 			you should add Ruby to your toolbox.
 		</p>},
-	image_url: 'ruby.jpg',
-	price: 49.95)
+               image: 'ruby.jpg',
+               price: 49.95)
 
 Product.create(title:'Book1', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
@@ -41,6 +41,7 @@ Product.create(title:'Book10', description:'Ruby is the fastest growing and most
 			you should add Ruby to your toolbox.', price:'50.89' )
 
 User.create(name:'Zabila Roman', email:'zabila.r@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
+User.create(name:'Zabila Ira', email:'zabila.i@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 
 Rubric.create(name:'Наш сайт', body:'Обговорення проблем та побажань щодо навчального процесу' )
 Topic.create(name:'Відгуки', content:'Тут можна залишити відгук про про наш сайт', user_id:1, rubric_id:1)

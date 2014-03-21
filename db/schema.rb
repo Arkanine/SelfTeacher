@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140321072445) do
-=======
 ActiveRecord::Schema.define(version: 20140320161332) do
->>>>>>> 1ef419c4f3cfd618dd32ecde2612a3b4f766a8f1
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -121,7 +117,7 @@ ActiveRecord::Schema.define(version: 20140320161332) do
   create_table "products", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image_url"
+    t.string   "image"
     t.decimal  "price",       precision: 4, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -135,31 +131,6 @@ ActiveRecord::Schema.define(version: 20140320161332) do
   end
 
   add_index "questions", ["test_id"], name: "index_questions_on_test_id"
-
-  create_table "rates", force: true do |t|
-    t.integer  "rater_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type"
-    t.float    "stars",         null: false
-    t.string   "dimension"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"
-  add_index "rates", ["rater_id"], name: "index_rates_on_rater_id"
-
-  create_table "rating_caches", force: true do |t|
-    t.integer  "cacheable_id"
-    t.string   "cacheable_type"
-    t.float    "avg",            null: false
-    t.integer  "qty",            null: false
-    t.string   "dimension"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
   create_table "results", force: true do |t|
     t.integer  "user_id"
