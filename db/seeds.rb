@@ -36,7 +36,8 @@ Track.create(name:'noname', sound:'http://www.freshly-ground.com/misc/music/2006
 User.create(name:'Zabila Roman', email:'zabila.r@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 User.create(name:'Zabila Ira', email:'zabila.i@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 
-AdminUser.create :email => 'zabila.r@ya.ru', :password => 'aaazzz', :password_confirmation => 'aaazzz'
+# AdminUser.create :email => 'zabila.r@ya.ru', :password => 'aaazzz', :password_confirmation => 'aaazzz'
+# AdminUser.create :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'
 
 Rubric.create(name:'Наш сайт', body:'Обговорення проблем та побажань щодо навчального процесу' )
 Topic.create(name:'Відгуки', content:'Тут можна залишити відгук про про наш сайт', user_id:1, rubric_id:1)
