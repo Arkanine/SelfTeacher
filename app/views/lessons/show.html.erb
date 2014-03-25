@@ -7,6 +7,9 @@
   <div id='central_col' class="col-md-7">
     <h4 class='level_h4'><%= link_to @lesson.level.name, @lesson.level %> > <%= @lesson.name %></h4>
     <ul class='levels_content'>
+
+      <%= render "/lessons/lessons_content/lesson#{@lesson.id.to_s}" %>
+
       <% if @lesson.exercises.any? %>
 
           <% @lesson.exercises.each do |exercise| %>

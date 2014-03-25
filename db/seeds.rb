@@ -31,6 +31,8 @@ Product.create(title:'Book10', description:'Ruby is the fastest growing and most
 			out there. If you need to get working programs delivered fast,
 			you should add Ruby to your toolbox.', price:'50.89' )
 
+Track.create(name:'noname', sound:'http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3')
+
 User.create(name:'Zabila Roman', email:'zabila.r@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 User.create(name:'Zabila Ira', email:'zabila.i@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 

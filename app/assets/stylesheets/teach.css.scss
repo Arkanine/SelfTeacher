@@ -37,7 +37,7 @@
     -khtml-border-radius: 6px;
 
     h4 {
-      padding-left: 20%;
+      padding-left: 5%;
     }
 
     li {
@@ -111,3 +111,14 @@
   color: red;
 }
 
+
+.level_content {
+  .form-control {
+    width:30%;
+    display: inline;
+    float: right;
+    margin-top: -5px;
+    padding: 1px;
+  }
+
+}

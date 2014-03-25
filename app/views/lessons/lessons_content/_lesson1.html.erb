@@ -1,0 +1,202 @@
+<div class='level_content'>
+    <h4>Англійська абетка. Звуки англійської мови</h4>
+
+    <h5><strong>Just Letters and Sounds(Просто букви і звуки)</strong></h5>
+
+    <p>В англійському алфавіті 26 букв - на сім менше, ніж у нас. Цей факт вже полегшує вивчення англійської мови ; ).</p>
+
+    <div id='pay_table' class="panel panel-default">
+      <div class="panel-heading" align='center'>The English Alphabet - Англійский алфавіт</div>
+
+      <table class="table">
+        <tbody>
+        <tr align='center'>
+          <td>
+            <strong>Аа</strong> [ei] (ей) <br>
+            <strong>Вb</strong> [bi:] (бі:) <br>
+            <strong>Cc</strong> [si:] (сі:) <br>
+            <strong>Dd</strong> [di:] (ді:) <br>
+            <strong>Ее</strong> [i:] (і:) <br>
+            <strong>Ff</strong> [ef] (еф) <br>
+            <strong>Gg</strong> [ʤi:] (джі:) <br>
+            <strong>Hh</strong> [eiʧ] (ейч) <br>
+            <strong>Ii</strong> [ai] (ай) <br>
+            <strong>Jj</strong> [ʤei] (джей) <br>
+            <strong>Kk</strong> [kei] (кей) <br>
+            <strong>Ll</strong> [el] (ел) <br>
+            <strong>Mm</strong> [em] (ем) <br>
+          </td>
+          <td>
+            <strong>Nn</strong> [en] (ен) <br>
+            <strong>Oo</strong> [ou] (оу) <br>
+            <strong>Pp</strong> [pi:] (пі:) <br>
+            <strong>Qq</strong> [kju:] (кью:) <br>
+            <strong>Rr</strong> [ɑ:] (а:) <br>
+            <strong>Ss</strong> [es] (ес) <br>
+            <strong>Tt</strong> [ti:] (ті:) <br>
+            <strong>Uu</strong> [ju:] (ю:) <br>
+            <strong>Vv</strong> [vi:] (ві:) <br>
+            <strong>Ww</strong> ['dʌblju:] (дáбл ю:) <br>
+            <strong>Xx</strong> [eks] (екс) <br>
+            <strong>Yy</strong> [wai] (уай) <br>
+            <strong>Zz</strong> [zed] (зед) <br>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+
+    <p>У квадратних дужках вказано, як вимовляється кожна буква. У стандартному британському варіанті мови буква <strong>R</strong> іноді не "виговорюється" зовсім: <strong>car</strong> [kɑ:] (автомашина), <strong>star</strong> [stɑ:] (зірка), <strong>door</strong> [do:] (двері). В Америці, як, втім, і в деяких районах Англії, ця буква звучить - глухо гарчить - і ви за бажання можете сміливо вимовляти її: <strong>arm</strong> [ɑ: rm] (рука), <strong>form</strong> [fo: rm] (форма, бланк) , <strong>turn</strong> [tǝ: rn] (повертати).</p>
+    <p>Алфавіт потрібно вивчити напам'ять. Why? Буває, ми не впевнені, як правильно пишеться те чи інше ім'я і доводиться уточнювати:</p>
+    <p>Spell your name. - Скажіть ваше ім'я по буквах.</p>
+    <p>Spell it, please. - Скажіть його по буквах, будь ласка.</p>
+    <p>І співрозмовник, якого звуть, припустимо, Timothy, або, якщо коротко, Tim, диктує нам:</p>
+    <p><strong>Timothy</strong> - [ti:] [ai] [em] [ou] [ti:] [eiʧ] [wai]</p>
+
+    <h5><strong>Word - Слово</strong></h5>
+    <p><strong>Spell</strong> - корисне дієслово, яке допомагає нам уточнити правопис (spelling) будь-якого слова, навіть самого "хитромудрими". Є в Англії місто Лестер. На слух у назві п'ять звуків: ['lestǝ]. Спробуємо знайти його на англійській карті. Where is it? Уточнимо у нашого знайомого Тіма:</p>
+    <p>How do you spell it? - Як ви його пишете?</p>
+    <p>Tim spells the name. We write it down. Ми запишем:</p>
+    <p>[el] [ i: ] [ai] [si:] [ i: ] [es] [ti:] [ i: ] [ɑ:] - <strong>Leicester</strong>.</p>
+    <p>Звуків всього п'ять, але літер - дев'ять! There are nine letters in <strong>Leicester</strong>. Історично так склалося, що деякі букви в цьому назві стали "німими".</p>
+    <p>Тім назве ще кілька міст, а ви напишіть їх - прямо тут в стрічках.</p>
+    <div class="form-group">
+      <p>[el] [ou] [en] [di:] [ou] [en] <span id='input'><%= text_field_tag 'word', '', class:'form-control' %></span></p>
+    </div>
+    <div class="form-group">
+      <p>[wai] [ou] [ɑ:] [kei] <span id='input'><%= text_field_tag 'word', '', class:'form-control' %></span></p>
+    </div>
+    <div class="form-group">
+      <p>[em] [ei] [en] [si:] [eiʧ] [ i: ] [es] [ti:] [ i: ] [ɑ:] <span><%= text_field_tag 'word', '', class:'form-control' %></span></p>
+    </div>
+
+    <h5><strong>Notes - Примітки</strong></h5>
+    <p>Імена (Ann, Tim), назви континентів (Africa, Asia), країн (England, Russia), міст (Bristol, York), сіл (Pendrift), вулиць (Oxford Street), площ (Trafalgar Square) і провулків (Penny Lane ) пишуться з "великої" букви.</p>
+
+
+    <h4>Your Dictionary(Ваш словник)</h4>
+    <p>Ваш словник - англо-російський, в ньому наводяться англійські слова з російським перекладом. Вони розташовані строго в алфавітному порядку.</p>
+    <p>Найдем перевод слова <strong>please</strong> - в разделе под буквой <strong>Р</strong>. Несколько простейших правил:</p>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>
+      Щоб не читати весь розділ від початку до кінця, дивимося на другу літеру слова - l.
+      Знову діє алфавітний принцип: буквене поєднання pl йде після поєднань pa, ре, ph, pi.
+      Ось пішли слова на <strong>pl: place</strong> [pleis] (місце), <strong>plain</strong> [plein] (рівнина) ...
+      Прийшла черга дивитися на третю букву е. Потім на четверту а. І ось після <strong>pleasant</strong> ['plezǝnt]
+      (приємний), але перед <strong>pleasure</strong> [' рlеʒǝ] (задоволення) знаходимо потрібну нам слово.
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>
+      Після <strong>please</strong> варто скорочення <strong>v</strong>, після <strong>pleasant - а</strong>. Що за "тайнопис"? Розгадка-пояснення на
+      самому початку словника - у Списку умовних скорочень. Буківка <strong>n</strong> позначає <strong>noun</strong> (іменник);
+      <strong>v - verb</strong> (дієслово); <strong>а - adjective</strong> (прикметник); <strong>adv - adverb</strong> (прислівник).
+      Ці покажчики не для того, щоб "навантажити" вас граматичними термінами. В англійській бувають випадки,
+      коли одне й те ж слово може виступати іменником або дієсловом, прикметником або прислівником.
+      Словник підкаже вам, яка це частина мови, а потім дасть переклад.
+      <p><strong>help</strong> 1. v допомагати. 2. n допомога; помічник.</p>
+      <p><strong>fast</strong> 1. а швидкий, швидкий. 2. adv швидко.</p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Іменники в усіх словниках наводяться в однині.
+      <p><strong>boy</strong> [boi] n хлопчик</p>
+      <p><strong>dad</strong> [dæd] n тато</p>
+      <p>Деякі слова однини не мають. На це вказують буковки pl: від plural (множинне).</p>
+      <p><strong>clothes</strong> [klouðz] n pl одяг</p>
+      <p><strong>scissors</strong> ['sizǝz] n pl ножницi</p>
+      <p>Буває, на щастя, рідко, що слово "виглядає", як у множині, але насправді воно в єдиному.
+        Словник не дасть вам помилитися: <strong>sing</strong> означає <strong>singular</strong> (однина).
+        Наприклад, <strong>news</strong> [nju: z] (употр. як sing) новина, звістка.
+      </p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>У дієслів дається основа, від якої утворюються інші дієслівні форми - зокрема, минулий час.
+      <p><strong>do</strong> [du:] v робити</p>
+      <p><strong>go</strong> [gou] v йти</p>
+      <p><strong>play</strong> [plei] v грати</p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Слово може мати два і більше значень,
+      тому не поспішайте брати переклад, який йде "першим за списком". Скажімо, іменник <strong>letter</strong> перекладається
+      як <strong>буква</strong> або <strong>лист</strong>. Прочитаємо дві пропозиції: у першому йдеться про букви, в другому про листи.
+      <p>There are twenty-six letters in the English alphabet. - У англійському алфавіті двадцять шість букв.</p>
+      <p>We write and get letters. - Ми пишемо і отримуємо листи.</p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Корисно переглядати всі пояснення до абзацу, в якому
+      знаходиться потрібне слово. Швидко пробіжимо його очима, і щось "відкладеться" в пам'яті.
+      <p>
+        Подивимося той абзац (гніздо, як його називають укладачі словників), в якому "гніздиться" слово <strong>look</strong> [luk].
+        Перше значення - <strong>дивитися</strong>. Друге - <strong>виглядати</strong>. І додаткові відомості: <strong>look</strong>
+        у поєднанні з <strong>after</strong> має значення <strong>піклуватися</strong> (про кого-небудь), <strong>наглядати</strong>
+        (за ким-небудь). Поєднання <strong>look for</strong> перекладається <strong>шукати</strong>.
+      </p>
+      <p>
+        Через якийсь час вам попадається текст з цими поєднаннями і, цілком можливо, ви перекладете його по пам'яті,
+        вже не заглядаючи в словник.
+      </p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Словник дає в квадратних дужках транскрипцію, тобто вимова.
+      Тільки за допомогою словникової транскрипції ми дізнаємося, що, наприклад, <strong>London</strong> (Лондон)
+      вимовляється ['lʌndǝn], a <strong>Leicester</strong> (Лестер) читається [' lestǝ] і ніяк не інакше. Якщо в слові
+      один склад, знак наголосу в транскрипції не ставиться, в ньому немає необхідності.
+      <p><strong>man</strong> [mæn] n людина</p>
+      <p><strong>help</strong> [help] v допомогать</p>
+      <p><strong>sea</strong> [si:] n море</p>
+
+      <p>Якщо вимовляються два і більше складів, наголос обов'язково вказується, причому знак стоїть перед ударним складом.</p>
+      <p><strong>alphabet</strong> ['ælfǝbit] n алфавiт</p>
+      <p><strong>England</strong> ['iŋglǝnd] n Англiя</p>
+      <p><strong>English</strong> ['iŋgliʃ] а англiйский</p>
+
+      <p>У українській мові довгота гласного не має значення. В англійській вимовляєте довгий звук в два рази довше короткого.
+        Інакше <strong>кулак</strong> перетвориться у вас в <strong>бенкет</strong>, а <strong>горщик</strong> - в <strong>порт</strong>.
+        Довгота гласного звуку відзначається значком [:].
+      </p>
+      <p><strong>fist</strong> [fist] n кулак	- <strong>feast</strong> [fi:st] n бенкет, свято</p>
+      <p><strong>lid</strong> [lid] n кришка	- <strong>lead</strong> [li:d] n поводок</p>
+      <p><strong>pot</strong> [pot] n горщик    - <strong>port</strong> [po:t] n порт</p>
+
+      <p>Транскрипція особливо необхідна, коли зустрічаються літерні сполучення, що пишуться однаково, але вимовляються по-різному.
+        Як наприклад, в цих парах слів:
+      </p>
+      <p><strong>so</strong> [sou] adv отож	    - <strong>do</strong> [du:] v робить</p>
+      <p><strong>few</strong> [fju:] а мало	    - <strong>sew</strong> [sou] v шить</p>
+      <p><strong>beak</strong> [bi:k] n дзьоб   - <strong>break</strong> [breik] v ламать</p>
+    </li>
+
+
+    <h4>The Sounds of English(Звуки англійської мови)</h4>
+    <h5><strong>Vowels - Голосні</strong></h5>
+    <p>[æ] c<strong>a</strong>t (кішка), c<strong>a</strong>rry (нести), r<strong>a</strong>t (щур), d<strong>a</strong>d [dæd], m<strong>a</strong>n (людина, чоловік)</p>
+    <% @tracks.each do |track| %>
+      <%= link_to 'Alala', track.sound.to_s, class:'sm2_button' %> Walking</p>
+    <% end %>
+
+  <p></p>
+    <p></p>
+    <p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
