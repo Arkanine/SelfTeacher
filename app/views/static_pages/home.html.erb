@@ -9,9 +9,10 @@
 
     <div class='levels_content'>
 
-      <%= link_to 'Alala', 'test1.mp3', class:'sm2_button' %> Walking</p>
-
-      <p><a href="http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3" class="sm2_button">Armstrong Beat</a> Armstrong Beat</p>
+      <% @tracks = Track.all %>
+      <% @tracks.each do |track| %>
+        <%= link_to 'Alala', track.sound.to_s, class:'sm2_button' %> Walking</p>
+      <% end %>
 
       <p>Навчання англійській мові – це моє хобі, а не робота.
         Моя мета - зробити вивчення англійської мови цікавим, ефективним та доступним для Вас.

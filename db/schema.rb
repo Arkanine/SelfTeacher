@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320161332) do
+ActiveRecord::Schema.define(version: 20140325070339) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -161,6 +161,13 @@ ActiveRecord::Schema.define(version: 20140320161332) do
     t.text     "content"
     t.integer  "rubric_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tracks", force: true do |t|
+    t.string   "sound"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

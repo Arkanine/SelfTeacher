@@ -34,6 +34,8 @@ Product.create(title:'Book10', description:'Ruby is the fastest growing and most
 User.create(name:'Zabila Roman', email:'zabila.r@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 User.create(name:'Zabila Ira', email:'zabila.i@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 
+AdminUser.create :email => 'zabila.r@ya.ru', :password => 'aaazzz', :password_confirmation => 'aaazzz'
+
 Rubric.create(name:'Наш сайт', body:'Обговорення проблем та побажань щодо навчального процесу' )
 Topic.create(name:'Відгуки', content:'Тут можна залишити відгук про про наш сайт', user_id:1, rubric_id:1)
 Comment.create(content:'Супер сайт', user_id:1, topic_id:1, rubric_id:1)

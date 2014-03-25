@@ -15,6 +15,8 @@ Teacher::Application.routes.draw do
   end
   resources :exercises
 
+  resources :tracks
+
   # users_&_sessions_routes
   resources :users
   resources :sessions
