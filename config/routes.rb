@@ -2,6 +2,8 @@ Teacher::Application.routes.draw do
 
 
 
+  resources :categories
+
   resources :orders
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -4,7 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.search(params[:search])
+    @products = if params[:category].present?
+        Product.where(category_id: params[:category]).includes(:title).order("products.title ASC")
+      else
+        Product.search(params[:search])
+        #@writing = Product.where(category_id: params[:category]).last
+       # @reading = Product.where(category_id: params[:category]).first
+        #     !!!!!!!!!!  ИЛИ  !!!!!!!!!!!!!!
+        #@grammar = Product.where(category_id: 3)
+      end
   end
 
   # GET /products/1
@@ -25,6 +33,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.category = Category.find(params[:category_id]) if params[:category_id]
 
     respond_to do |format|
       if @product.save
@@ -69,6 +78,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image, :price, :remote_image_url)
+      params.require(:product).permit(:title, :description, :image, :price, :remote_image_url, :category_id)
     end
 end
