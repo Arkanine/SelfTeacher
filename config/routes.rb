@@ -51,13 +51,10 @@ Teacher::Application.routes.draw do
   get 'about',                 to:'static_pages#about'
   get 'contact',               to:'static_pages#contact'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'general_course',        to:'static_pages#general_course'
+  get 'business_course',       to:'static_pages#business_course'
+  get 'special_course',        to:'static_pages#special_course'
+  get 'training_course',       to:'static_pages#training_course'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
