@@ -1,9 +1,23 @@
+
 <div class='teach_nav'>
   <div id='left_col' class="list-group">
     <a href="#" class="list-group-item active">
       SelfTeacher
     </a>
     <%= link_to 'Головна', root_path, class:'list-group-item' %>
+    <%= allow_test  %>
+
+    <div class="btn-group">
+      <a href="#" class="list-group-item" data-toggle="dropdown">Розпочати навчання
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu list-inline" role="menu">
+        <li class='lm_dropdown'><%= link_to 'Початковий рівень', Level.find_by_name('Початковий рівень: Starter(A1)') %></li>
+        <li class='lm_dropdown'><%= link_to 'Елементарний рівень', Level.find_by_name('Елементарний рівень: Elementary (А1-А2)') %></li>
+        <li class='lm_dropdown'><%= link_to 'Проміжний рівень', Level.find_by_name('Проміжний рівень: Pre-Intermediate (А2-В1)') %></li>
+        <li class='lm_dropdown'><%= link_to 'Середній рівень', Level.find_by_name('Середній рівень: Intermediate (В1)') %></li>
+      </ul>
+    </div>
 
     <div class="btn-group">
       <a href="#" class="list-group-item" data-toggle="dropdown">Курси англійської
@@ -15,14 +29,23 @@
       </ul>
     </div>
 
-    <%= link_to 'Вартість та оплата', payment_path, class:'list-group-item' %>
+    <div class="btn-group">
+      <a href="#" class="list-group-item" data-toggle="dropdown">Програми навчання
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu list-inline" role="menu">
+        <li class='lm_dropdown'><%= link_to 'Загальний розмовний курс', general_course_path %></li>
+        <li class='lm_dropdown'><%= link_to 'Спеціалізований курс', special_course_path %></li>
+        <li class='lm_dropdown'><%= link_to 'Бізнес курс', business_course_path %></li>
+        <li class='lm_dropdown'><%= link_to 'Тренінги', training_course_path %></li>
+      </ul>
+    </div>
+
     <%= link_to 'Методика навчання', technique_path, class:'list-group-item' %>
-    <%= link_to 'Програми навчання', training_program_path, class:'list-group-item' %>
-    <%= link_to 'Рівні англійської', levels_path, class:'list-group-item' %>
-    <%= link_to 'Пройти тест', Test.find_by_name('Тест на знання ангійської  мови'), class:'list-group-item' %>
     <%= link_to 'Про нас', about_path, class:'list-group-item' %>
     <%= link_to 'Контакти', contact_path, class:'list-group-item' %>
     <%= link_to 'Відгуки', Topic.find_by_name('Відгуки'), class:'list-group-item' %>
+    <%= link_to 'Вартість та оплата', payment_path, class:'list-group-item' %>
 
   </div>
 </div>

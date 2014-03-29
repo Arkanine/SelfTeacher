@@ -46,3 +46,6 @@ gem 'kaminari'
 
 gem 'rmagick'
 gem 'carrierwave'
+
+gem 'soundmanager2-rails'
+

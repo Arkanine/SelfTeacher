@@ -139,7 +139,7 @@
 
 hr {
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 #new_header {
@@ -147,10 +147,38 @@ hr {
   font-size: 16px;
 }
 
+<<<<<<< HEAD
 .product_image {
   padding-top:5px;
 }
 
 .list_description {
 	padding: 10px;
+=======
+.thumbnail {
+  .product_image {
+    padding-top:5px;
+  }
+  .caption {
+    h5 {
+      padding-bottom: 5px;
+      margin: 0;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+    #price {
+      color: #3978AF;
+    }
+    .btn-xlarge {
+      padding: 4px;
+      font-size: 12px; //change this to your desired size
+      line-height: normal;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+    }
+  }
+>>>>>>> 7cc14c606febcc8913ba5f5163f502e73b6baeaa
 }

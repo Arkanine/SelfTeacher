@@ -15,17 +15,18 @@
       </h4>
       З <span class='right_answer'><%= @question_count %></span> питань ви дали
       <span class='wrong_answer'><%= @result_count %></span> правильних відповідей.
-      <h5>Були допущені наступні помилки:</h5>
 
-
-      <% @errors.each do |error| %>
-        <p>
-          <%= error.answer.question.id %>. <%= error.answer.question.content %><br>
-          Отримана відповідь: <span class='wrong_answer'><%= error.answer.content %></span><br>
-          <% error.answer.question.answers.where(isright:true).each do |t| %>
-              Правильна відповідь: <span class='right_answer'><%= t.content %></span><br>
-          <% end %>
-        </p>
+      <% if @errors.any? %>
+        <h5>Були допущені наступні помилки:</h5>
+        <% @errors.each do |error| %>
+          <p>
+            <%= error.answer.question.id %>. <%= error.answer.question.content %><br>
+            Отримана відповідь: <span class='wrong_answer'><%= error.answer.content %></span><br>
+            <% error.answer.question.answers.where(isright:true).each do |t| %>
+                Правильна відповідь: <span class='right_answer'><%= t.content %></span><br>
+            <% end %>
+          </p>
+        <% end %>
       <% end %>
 
     </div>

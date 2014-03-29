@@ -1,11 +1,11 @@
 ActiveAdmin.register Product do
-  permit_params :title, :description, :image_url, :price
+  permit_params :title, :description, :image, :price
 
   index do
     column :id 
     column :title
     column :description
-    column :image_url
+    column :image
     column :price, :sortable => :price do |product|
       number_to_currency product.price
     end

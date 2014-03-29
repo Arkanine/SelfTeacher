@@ -1,0 +1,555 @@
+<div class='level_content'>
+    <h4><i>Англійська абетка. Звуки англійської мови</i></h4>
+
+    <h5><strong>Just Letters and Sounds(Просто букви і звуки)</strong></h5>
+
+    <p>В англійському алфавіті 26 букв - на сім менше, ніж у нас. Цей факт вже полегшує вивчення англійської мови ; ).</p>
+
+    <div id='pay_table' class="panel panel-default">
+      <div class="panel-heading" align='center'>The English Alphabet - Англійский алфавіт</div>
+
+      <table class="table">
+        <tbody>
+        <tr align='center'>
+          <td>
+            <strong>Аа</strong> [ei] (ей) <br>
+            <strong>Вb</strong> [bi:] (бі:) <br>
+            <strong>Cc</strong> [si:] (сі:) <br>
+            <strong>Dd</strong> [di:] (ді:) <br>
+            <strong>Ее</strong> [i:] (і:) <br>
+            <strong>Ff</strong> [ef] (еф) <br>
+            <strong>Gg</strong> [ʤi:] (джі:) <br>
+            <strong>Hh</strong> [eiʧ] (ейч) <br>
+            <strong>Ii</strong> [ai] (ай) <br>
+            <strong>Jj</strong> [ʤei] (джей) <br>
+            <strong>Kk</strong> [kei] (кей) <br>
+            <strong>Ll</strong> [el] (ел) <br>
+            <strong>Mm</strong> [em] (ем) <br>
+          </td>
+          <td>
+            <strong>Nn</strong> [en] (ен) <br>
+            <strong>Oo</strong> [ou] (оу) <br>
+            <strong>Pp</strong> [pi:] (пі:) <br>
+            <strong>Qq</strong> [kju:] (кью:) <br>
+            <strong>Rr</strong> [ɑ:] (а:) <br>
+            <strong>Ss</strong> [es] (ес) <br>
+            <strong>Tt</strong> [ti:] (ті:) <br>
+            <strong>Uu</strong> [ju:] (ю:) <br>
+            <strong>Vv</strong> [vi:] (ві:) <br>
+            <strong>Ww</strong> ['dʌblju:] (дáбл ю:) <br>
+            <strong>Xx</strong> [eks] (екс) <br>
+            <strong>Yy</strong> [wai] (уай) <br>
+            <strong>Zz</strong> [zed] (зед) <br>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+
+    <p>У квадратних дужках вказано, як вимовляється кожна буква. У стандартному британському варіанті мови буква <strong>R</strong> іноді не "виговорюється" зовсім: <strong>car</strong> [kɑ:] (автомашина), <strong>star</strong> [stɑ:] (зірка), <strong>door</strong> [do:] (двері). В Америці, як, втім, і в деяких районах Англії, ця буква звучить - глухо гарчить - і ви за бажання можете сміливо вимовляти її: <strong>arm</strong> [ɑ: rm] (рука), <strong>form</strong> [fo: rm] (форма, бланк) , <strong>turn</strong> [tǝ: rn] (повертати).</p>
+    <p>Алфавіт потрібно вивчити напам'ять. Why? Буває, ми не впевнені, як правильно пишеться те чи інше ім'я і доводиться уточнювати:</p>
+    <p>Spell your name. - Скажіть ваше ім'я по буквах.</p>
+    <p>Spell it, please. - Скажіть його по буквах, будь ласка.</p>
+    <p>І співрозмовник, якого звуть, припустимо, Timothy, або, якщо коротко, Tim, диктує нам:</p>
+    <p><strong>Timothy</strong> - [ti:] [ai] [em] [ou] [ti:] [eiʧ] [wai]</p>
+
+    <h5><strong>Word - Слово</strong></h5>
+    <p><strong>Spell</strong> - корисне дієслово, яке допомагає нам уточнити правопис (spelling) будь-якого слова, навіть самого "хитромудрими". Є в Англії місто Лестер. На слух у назві п'ять звуків: ['lestǝ]. Спробуємо знайти його на англійській карті. Where is it? Уточнимо у нашого знайомого Тіма:</p>
+    <p>How do you spell it? - Як ви його пишете?</p>
+    <p>Tim spells the name. We write it down. Ми запишем:</p>
+    <p>[el] [ i: ] [ai] [si:] [ i: ] [es] [ti:] [ i: ] [ɑ:] - <strong>Leicester</strong>.</p>
+    <p>Звуків всього п'ять, але літер - дев'ять! There are nine letters in <strong>Leicester</strong>. Історично так склалося, що деякі букви в цьому назві стали "німими".</p>
+    <p>Тім назве ще кілька міст, а ви напишіть їх - прямо тут в стрічках.</p>
+    <div class="form-group">
+      <p>[el] [ou] [en] [di:] [ou] [en] <span id='input'><%= text_field_tag 'word', '', class:'form-control' %></span></p>
+    </div>
+    <div class="form-group">
+      <p>[wai] [ou] [ɑ:] [kei] <span id='input'><%= text_field_tag 'word', '', class:'form-control' %></span></p>
+    </div>
+    <div class="form-group">
+      <p>[em] [ei] [en] [si:] [eiʧ] [ i: ] [es] [ti:] [ i: ] [ɑ:] <span><%= text_field_tag 'word', '', class:'form-control' %></span></p>
+    </div>
+
+    <h5><strong>Notes - Примітки</strong></h5>
+    <p>Імена (Ann, Tim), назви континентів (Africa, Asia), країн (England, Russia), міст (Bristol, York), сіл (Pendrift), вулиць (Oxford Street), площ (Trafalgar Square) і провулків (Penny Lane ) пишуться з "великої" букви.</p>
+
+
+    <h4><i>Your Dictionary(Ваш словник)</i></h4>
+    <p>Ваш словник - англо-український, в ньому наводяться англійські слова з українським перекладом. Вони розташовані строго в алфавітному порядку.</p>
+    <p>Знайдемо переклад слова <strong>please</strong> - в розділі під буквою <strong>Р</strong>. Декілька елементарних правил:</p>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>
+      Щоб не читати весь розділ від початку до кінця, дивимося на другу літеру слова - l.
+      Знову діє алфавітний принцип: буквене поєднання pl йде після поєднань pa, ре, ph, pi.
+      Ось пішли слова на <strong>pl: place</strong> [pleis] (місце), <strong>plain</strong> [plein] (рівнина) ...
+      Прийшла черга дивитися на третю букву е. Потім на четверту а. І ось після <strong>pleasant</strong> ['plezǝnt]
+      (приємний), але перед <strong>pleasure</strong> [' рlеʒǝ] (задоволення) знаходимо потрібну нам слово.
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>
+      Після <strong>please</strong> варто скорочення <strong>v</strong>, після <strong>pleasant - а</strong>. Що за "тайнопис"? Розгадка-пояснення на
+      самому початку словника - у Списку умовних скорочень. Буківка <strong>n</strong> позначає <strong>noun</strong> (іменник);
+      <strong>v - verb</strong> (дієслово); <strong>а - adjective</strong> (прикметник); <strong>adv - adverb</strong> (прислівник).
+      Ці покажчики не для того, щоб "навантажити" вас граматичними термінами. В англійській бувають випадки,
+      коли одне й те ж слово може виступати іменником або дієсловом, прикметником або прислівником.
+      Словник підкаже вам, яка це частина мови, а потім дасть переклад.
+      <p><strong>help</strong> 1. v допомагати. 2. n допомога; помічник.</p>
+      <p><strong>fast</strong> 1. а швидкий, швидкий. 2. adv швидко.</p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Іменники в усіх словниках наводяться в однині.
+      <p><strong>boy</strong> [boi] n хлопчик</p>
+      <p><strong>dad</strong> [dæd] n тато</p>
+      <p>Деякі слова однини не мають. На це вказують буковки pl: від plural (множинне).</p>
+      <p><strong>clothes</strong> [klouðz] n pl одяг</p>
+      <p><strong>scissors</strong> ['sizǝz] n pl ножницi</p>
+      <p>Буває, на щастя, рідко, що слово "виглядає", як у множині, але насправді воно в єдиному.
+        Словник не дасть вам помилитися: <strong>sing</strong> означає <strong>singular</strong> (однина).
+        Наприклад, <strong>news</strong> [nju: z] (употр. як sing) новина, звістка.
+      </p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>У дієслів дається основа, від якої утворюються інші дієслівні форми - зокрема, минулий час.
+      <p><strong>do</strong> [du:] v робити</p>
+      <p><strong>go</strong> [gou] v йти</p>
+      <p><strong>play</strong> [plei] v грати</p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Слово може мати два і більше значень,
+      тому не поспішайте брати переклад, який йде "першим за списком". Скажімо, іменник <strong>letter</strong> перекладається
+      як <strong>буква</strong> або <strong>лист</strong>. Прочитаємо дві пропозиції: у першому йдеться про букви, в другому про листи.
+      <p>There are twenty-six letters in the English alphabet. - У англійському алфавіті двадцять шість букв.</p>
+      <p>We write and get letters. - Ми пишемо і отримуємо листи.</p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Корисно переглядати всі пояснення до абзацу, в якому
+      знаходиться потрібне слово. Швидко пробіжимо його очима, і щось "відкладеться" в пам'яті.
+      <p>
+        Подивимося той абзац (гніздо, як його називають укладачі словників), в якому "гніздиться" слово <strong>look</strong> [luk].
+        Перше значення - <strong>дивитися</strong>. Друге - <strong>виглядати</strong>. І додаткові відомості: <strong>look</strong>
+        у поєднанні з <strong>after</strong> має значення <strong>піклуватися</strong> (про кого-небудь), <strong>наглядати</strong>
+        (за ким-небудь). Поєднання <strong>look for</strong> перекладається <strong>шукати</strong>.
+      </p>
+      <p>
+        Через якийсь час вам попадається текст з цими поєднаннями і, цілком можливо, ви перекладете його по пам'яті,
+        вже не заглядаючи в словник.
+      </p>
+    </li>
+
+    <li class='list_content'><%= render 'static_pages/arrow' %>Словник дає в квадратних дужках транскрипцію, тобто вимова.
+      Тільки за допомогою словникової транскрипції ми дізнаємося, що, наприклад, <strong>London</strong> (Лондон)
+      вимовляється ['lʌndǝn], a <strong>Leicester</strong> (Лестер) читається [' lestǝ] і ніяк не інакше. Якщо в слові
+      один склад, знак наголосу в транскрипції не ставиться, в ньому немає необхідності.
+      <p><strong>man</strong> [mæn] n людина</p>
+      <p><strong>help</strong> [help] v допомогать</p>
+      <p><strong>sea</strong> [si:] n море</p>
+
+      <p>Якщо вимовляються два і більше складів, наголос обов'язково вказується, причому знак стоїть перед ударним складом.</p>
+      <p><strong>alphabet</strong> ['ælfǝbit] n алфавiт</p>
+      <p><strong>England</strong> ['iŋglǝnd] n Англiя</p>
+      <p><strong>English</strong> ['iŋgliʃ] а англiйский</p>
+
+      <p>У українській мові довгота гласного не має значення. В англійській вимовляєте довгий звук в два рази довше короткого.
+        Інакше <strong>кулак</strong> перетвориться у вас в <strong>бенкет</strong>, а <strong>горщик</strong> - в <strong>порт</strong>.
+        Довгота гласного звуку відзначається значком [:].
+      </p>
+      <p><strong>fist</strong> [fist] n кулак	- <strong>feast</strong> [fi:st] n бенкет, свято</p>
+      <p><strong>lid</strong> [lid] n кришка	- <strong>lead</strong> [li:d] n поводок</p>
+      <p><strong>pot</strong> [pot] n горщик    - <strong>port</strong> [po:t] n порт</p>
+
+      <p>Транскрипція особливо необхідна, коли зустрічаються літерні сполучення, що пишуться однаково, але вимовляються по-різному.
+        Як наприклад, в цих парах слів:
+      </p>
+      <p><strong>so</strong> [sou] adv отож	    - <strong>do</strong> [du:] v робить</p>
+      <p><strong>few</strong> [fju:] а мало	    - <strong>sew</strong> [sou] v шить</p>
+      <p><strong>beak</strong> [bi:k] n дзьоб   - <strong>break</strong> [breik] v ламать</p>
+    </li>
+
+
+    <h4><i>The Sounds of English(Звуки англійської мови)</i></h4>
+    <h5><strong>Vowels - Голосні</strong></h5>
+
+    <li>
+      <span class='sounds'>[æ] - </span>
+      c<strong>a</strong>t <%= link_to 'sound', @tracks.find_by(name:'sound1').sound.to_s, class:'sm2_button' %> (кішка),
+      c<strong>a</strong>rry <%= link_to 'sound', @tracks.find_by(name:'sound2').sound.to_s, class:'sm2_button' %> (нести),
+      r<strong>a</strong>t <%= link_to 'sound', @tracks.find_by(name:'sound3').sound.to_s, class:'sm2_button' %> (щур).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ɑ:] - </span>
+      h<strong>a</strong>rm <%= link_to 'sound', '#', class:'sm2_button' %> (шкода),
+      f<strong>a</strong>r <%= link_to 'sound', '#', class:'sm2_button' %> (далеко),
+      cl<strong>a</strong>ss <%= link_to 'sound', '#', class:'sm2_button' %> (класс).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[i:] - </span>
+      h<strong>e</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (він),
+      m<strong>ea</strong>l <%= link_to 'sound', '#', class:'sm2_button' %> (їжа),
+      tr<strong>ee</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (дерево).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[i] - </span>
+      <strong>i</strong>t <%= link_to 'sound', '#', class:'sm2_button' %> (воно),
+      s<strong>i</strong>t <%= link_to 'sound', '#', class:'sm2_button' %> (сидіти),
+      t<strong>i</strong>cket <%= link_to 'sound', '#', class:'sm2_button' %> (білет).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[e] - </span>
+      b<strong>e</strong>st <%= link_to 'sound', '#', class:'sm2_button' %> (кращий),
+      m<strong>e</strong>nd <%= link_to 'sound', '#', class:'sm2_button' %> (чинити),
+      p<strong>e</strong>n <%= link_to 'sound', '#', class:'sm2_button' %> (ручка).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[о] - </span>
+      c<strong>o</strong>ffee <%= link_to 'sound', '#', class:'sm2_button' %> (кава),
+      n<strong>o</strong>t <%= link_to 'sound', '#', class:'sm2_button' %> (ні),
+      r<strong>o</strong>ck <%= link_to 'sound', '#', class:'sm2_button' %> (скала).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[о:] - </span>
+      m<strong>o</strong>rning <%= link_to 'sound', '#', class:'sm2_button' %> (ранок),
+      b<strong>a</strong>ll <%= link_to 'sound', '#', class:'sm2_button' %> (м`яч),
+      sm<strong>a</strong>ll <%= link_to 'sound', '#', class:'sm2_button' %> (маленький).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[u] - </span>
+      b<strong>oo</strong>k <%= link_to 'sound', '#', class:'sm2_button' %> (книга),
+      f<strong>oo</strong>t <%= link_to 'sound', '#', class:'sm2_button' %> (нога),
+      s<strong>oo</strong>n <%= link_to 'sound', '#', class:'sm2_button' %> (скоро).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[u:] - </span>
+      bl<strong>ue</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (синій),
+      m<strong>o</strong>ve <%= link_to 'sound', '#', class:'sm2_button' %> (рухати),
+      s<strong>oo</strong>n <%= link_to 'sound', '#', class:'sm2_button' %> (скоро).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ʌ] - </span>
+      c<strong>u</strong>p <%= link_to 'sound', '#', class:'sm2_button' %> (чашка),
+      m<strong>o</strong>ther <%= link_to 'sound', '#', class:'sm2_button' %> (мати),
+      s<strong>o</strong>me <%= link_to 'sound', '#', class:'sm2_button' %> (трішки).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ǝ:] - </span>
+      th<strong>i</strong>rd <%= link_to 'sound', '#', class:'sm2_button' %> (третій),
+      w<strong>o</strong>rk <%= link_to 'sound', '#', class:'sm2_button' %> (робота),
+      l<strong>ea</strong>rn <%= link_to 'sound', '#', class:'sm2_button' %> (вчить).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ǝ] - </span>
+      t<strong>ea</strong>cher  <%= link_to 'sound', '#', class:'sm2_button' %> (вчитель),
+      S<strong>a</strong>turday  <%= link_to 'sound', '#', class:'sm2_button' %> (субота).
+    </li>
+
+
+    <h5><strong>Diphthongs - Дифтонги</strong></h5>
+    <p>(Сполучення двох голосних літер)</p>
+    <li>
+      <span class='sounds'>[ei] - </span>
+      b<strong>a</strong>by <%= link_to 'sound', @tracks.find_by(name:'sound4').sound.to_s, class:'sm2_button' %> (дитина),
+      s<strong>a</strong>y <%= link_to 'sound', @tracks.find_by(name:'sound5').sound.to_s, class:'sm2_button' %> (сказать),
+      tr<strong>ai</strong>n <%= link_to 'sound', @tracks.find_by(name:'sound6').sound.to_s, class:'sm2_button' %> (поїзд).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ai] - </span>
+      <strong>i</strong>ce <%= link_to 'sound', '#', class:'sm2_button' %> (лід)
+      l<strong>ie</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (лежать),
+      m<strong>y</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (мій)
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[au] - </span>
+      cl<strong>ou</strong>d <%= link_to 'sound', '#', class:'sm2_button' %> (хмара),
+      fl<strong>o</strong>wer <%= link_to 'sound', '#', class:'sm2_button' %> (квітка),
+      t<strong>o</strong>wn <%= link_to 'sound', '#', class:'sm2_button' %> (місто).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ou] - </span>
+      n<strong>o</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (ні),
+      <strong>o</strong>nly <%= link_to 'sound', '#', class:'sm2_button' %> (тільки),
+      r<strong>oa</strong>d <%= link_to 'sound', '#', class:'sm2_button' %> (дорога).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[oi] - </span>
+      c<strong>oi</strong>n <%= link_to 'sound', '#', class:'sm2_button' %> (монета),
+      n<strong>oi</strong>se <%= link_to 'sound', '#', class:'sm2_button' %> (шум),
+      b<strong>oy</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (хлопчик).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[iǝ] - </span>
+      <strong>ea</strong>r <%= link_to 'sound', '#', class:'sm2_button' %> (вухо),
+      d<strong>ea</strong>r <%= link_to 'sound', '#', class:'sm2_button' %> (дорогий),
+      h<strong>e</strong>re <%= link_to 'sound', '#', class:'sm2_button' %> (тут).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ɛǝ] - </span>
+      <strong>ai</strong>r <%= link_to 'sound', '#', class:'sm2_button' %> (повітря),
+      b<strong>ea</strong>r <%= link_to 'sound', '#', class:'sm2_button' %> (ведмідь),
+      th<strong>e</strong>re <%= link_to 'sound', '#', class:'sm2_button' %> (там).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[uǝ] - </span>
+      p<strong>oo</strong>r <%= link_to 'sound', '#', class:'sm2_button' %> (бідний),
+      s<strong>u</strong>re <%= link_to 'sound', '#', class:'sm2_button' %> (впевнений).
+    </li>
+
+
+    <h5><strong>Consonants - Приголосні</strong></h5>
+    <li>
+      <span class='sounds'>[b] - </span>
+      <strong>b</strong>ack <%= link_to 'sound', @tracks.find_by(name:'sound7').sound.to_s, class:'sm2_button' %> (спина),
+      hus<strong>b</strong>and <%= link_to 'sound', @tracks.find_by(name:'sound8').sound.to_s, class:'sm2_button' %> (чоловік)
+      ri<strong>b</strong> <%= link_to 'sound', @tracks.find_by(name:'sound9').sound.to_s, class:'sm2_button' %> (ребро),
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[p] - </span>
+      <strong>p</strong>ast <%= link_to 'sound', '#', class:'sm2_button' %> (минулий),
+      o<strong>p</strong>en <%= link_to 'sound', '#', class:'sm2_button' %> (відкривать),
+        <strong>p</strong>oint <%= link_to 'sound', '#', class:'sm2_button' %> (указка)ю
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[d] - </span>
+      <strong>d</strong>ay <%= link_to 'sound', '#', class:'sm2_button' %> (день),
+      <strong>d</strong>ark <%= link_to 'sound', '#', class:'sm2_button' %> (темний),
+      win<strong>d</strong>ow <%= link_to 'sound', '#', class:'sm2_button' %> (вікно).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[t] - </span>
+      <strong>t</strong>ake <%= link_to 'sound', '#', class:'sm2_button' %> (брати),
+      <strong>t</strong>ree <%= link_to 'sound', '#', class:'sm2_button' %> (дерево),
+      ho<strong>t</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (гарячий).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[k] - </span>
+      <strong>k</strong>ing <%= link_to 'sound', '#', class:'sm2_button' %> (король),
+      <strong>c</strong>old <%= link_to 'sound', '#', class:'sm2_button' %> (холодний),
+      si<strong>ck</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (хворий).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[g] - </span>
+      <strong>g</strong>et <%= link_to 'sound', '#', class:'sm2_button' %> (отримувати),
+      ba<strong>g</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (сумка),
+      <strong>g</strong>irl <%= link_to 'sound', '#', class:'sm2_button' %> (дівчинка).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[v] - </span>
+      <strong>v</strong>ery <%= link_to 'sound', '#', class:'sm2_button' %> (дуже),
+      ha<strong>v</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (мати),
+      ne<strong>v</strong>er <%= link_to 'sound', '#', class:'sm2_button' %> (ніколи).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[f] - </span>
+      <strong>f</strong>i<strong>f</strong>teen <%= link_to 'sound', '#', class:'sm2_button' %> (п’ятнадцять),
+      wi<strong>f</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (дружина),
+      <strong>ph</strong>rase <%= link_to 'sound', '#', class:'sm2_button' %> (фраза).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[z] - </span>
+      <strong>z</strong>ero <%= link_to 'sound', '#', class:'sm2_button' %> (нуль),
+      ma<strong>z</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (лабіринт),
+      ro<strong>s</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (роза).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[s] - </span>
+      <strong>s</strong>o <%= link_to 'sound', '#', class:'sm2_button' %> (отож),
+      ba<strong>s</strong>ket <%= link_to 'sound', '#', class:'sm2_button' %> (корзина),
+      <strong>c</strong>ity <%= link_to 'sound', '#', class:'sm2_button' %> (місто).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ð] - </span>
+      <strong>th</strong>is <%= link_to 'sound', '#', class:'sm2_button' %> (цей),
+      toge<strong>th</strong>er <%= link_to 'sound', '#', class:'sm2_button' %> (разом),
+      fa<strong>th</strong>er <%= link_to 'sound', '#', class:'sm2_button' %> (батько).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[θ] - </span>
+      <strong>th</strong>in <%= link_to 'sound', '#', class:'sm2_button' %> (тонкий),
+      <strong>th</strong>ink <%= link_to 'sound', '#', class:'sm2_button' %> (думать),
+      no<strong>th</strong>ing <%= link_to 'sound', '#', class:'sm2_button' %> (нічого).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ʃ] - </span>
+      <strong>sh</strong>ip <%= link_to 'sound', '#', class:'sm2_button' %> (корабель),
+      fi<strong>sh</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (риба),
+      Ru<strong>ss</strong>ian <%= link_to 'sound', '#', class:'sm2_button' %> (російський).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ʒ] - </span>
+      lei<strong>s</strong>ure <%= link_to 'sound', '#', class:'sm2_button' %> (дозвілля),
+      gara<strong>g</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (гараж),
+      mira<strong>g</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (міраж).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ʧ] - </span>
+      <strong>ch</strong>air <%= link_to 'sound', '#', class:'sm2_button' %>  (стілець),
+      ea<strong>ch</strong> <%= link_to 'sound', '#', class:'sm2_button' %>  (кожен),
+      mu<strong>ch</strong> <%= link_to 'sound', '#', class:'sm2_button' %>  (багато).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ʤ] - </span>
+      <strong>j</strong>u<strong>dg</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (суддя),
+      a<strong>g</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (вік),
+      langua<strong>g</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (мова).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[h] - </span>
+      <strong>h</strong>at <%= link_to 'sound', '#', class:'sm2_button' %> (капелюх),
+      un<strong>h</strong>appy <%= link_to 'sound', '#', class:'sm2_button' %> (нещасний),
+      <strong>h</strong>ome <%= link_to 'sound', '#', class:'sm2_button' %> (дім).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[l] - </span>
+      <strong>l</strong>ike <%= link_to 'sound', '#', class:'sm2_button' %> (любити),
+      pul<strong>l</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (тягнути),
+      <strong>l</strong>ast <%= link_to 'sound', '#', class:'sm2_button' %> (останній).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[m] - </span>
+      <strong>m</strong>ake <%= link_to 'sound', '#', class:'sm2_button' %> (робити),
+      <strong>m</strong>eet <%= link_to 'sound', '#', class:'sm2_button' %> (зустрічать),
+      su<strong>mm</strong>er <%= link_to 'sound', '#', class:'sm2_button' %> (літо).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[n] - </span>
+      <strong>n</strong>ever <%= link_to 'sound', '#', class:'sm2_button' %> (ніколи),
+      li<strong>n</strong>e <%= link_to 'sound', '#', class:'sm2_button' %> (лінія),
+      rou<strong>n</strong>d <%= link_to 'sound', '#', class:'sm2_button' %> (круглий).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[ŋ] - </span>
+      so<strong>ng</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (пісня),
+      thi<strong>ng</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (річ),
+      readi<strong>ng</strong> <%= link_to 'sound', '#', class:'sm2_button' %> (читання).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[r] - </span>
+      <strong>r</strong>ed <%= link_to 'sound', '#', class:'sm2_button' %> (червоний),
+      eve<strong>r</strong>y <%= link_to 'sound', '#', class:'sm2_button' %> (кажен),
+      ma<strong>rr</strong>y <%= link_to 'sound', '#', class:'sm2_button' %> (одружуватись).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[w] - </span>
+      <strong>w</strong>ell <%= link_to 'sound', '#', class:'sm2_button' %> (добре),
+      <strong>w</strong>oman <%= link_to 'sound', '#', class:'sm2_button' %> (жінка),
+      <strong>w</strong>hat <%= link_to 'sound', '#', class:'sm2_button' %> (що).
+    </li>
+    <hr>
+    <li>
+      <span class='sounds'>[j] - </span>
+      <strong>y</strong>es <%= link_to 'sound', '#', class:'sm2_button' %> (так),
+      on<strong>i</strong>on <%= link_to 'sound', '#', class:'sm2_button' %> (лук),
+      Ital<strong>i</strong>an <%= link_to 'sound', '#', class:'sm2_button' %> (Італійський).
+    </li>
+
+
+
+    <h5><strong>Notes - Примечания</strong></h5>
+    <li>
+      <strong>1.</strong> Удвоенные согласные в английских словах произносятся как один звук.
+    </li>
+    <p>gra<strong>ss</strong> [grɑ: s] n трава</p>
+    <p>bi<strong>tt</strong>er ['bitǝ] а горький</p>
+    <p>ca<strong>rr</strong>y ['kæri] v нести</p>
+    <p>wi<strong>nn</strong>er ['winǝ] n победитель</p>
+    <li>
+      <strong>2.</strong> В отличие от русского, английские звонкие согласные в конце слова не становятся глухими. Например,
+      в слове <strong>rub</strong> [rʌb] должно звучать четкое [b]. В слове <strong>good</strong> [gud] так же четко произносите звук [d],
+      а в слове <strong>dog</strong> [dog] звук [g].
+    </li>
+
+    <h5><strong>Conversation - Разговор</strong></h5>
+    <p>
+      Хочется как можно быстрее заговорить. А для начала разговора по-английски лучше всего подходит <strong>hello</strong> [hǝ'lou].
+      Это приветствие соответствует русским здравствуй, здравствуйте, привет.
+    </p>
+
+    <p>Hello, boys and girls. - Здравствуйте, мальчики и девочки.</p>
+    <p>Hello, everybody. - Здравствуйте, все.</p>
+
+    <li>Используйте <strong>hello</strong> в разговоре с близкими родственниками, друзьями, одноклассниками.</li>
+
+    <p>Hello, Mum. - Здравствуй, мама.</p>
+    <p>Hello, Dad. - Здравствуй, папа.</p>
+    <p>Hello, Nick! Hello, Tim! - Привет, Ник! Привет, Тим!</p>
+
+    <li>Говорите <strong>hello</strong>, окликая кого-нибудь на улице, привлекая к себе внимание или отвечая на телефонный звонок.</li>
+
+    <p>Hello! - Эй!</p>
+    <p>Hello. - Алло.</p>
+
+    <h5><strong>Discussion - Обсуждение</strong></h5>
+    <p>
+      Английские <strong>dad</strong> [dæd]  и <strong>mum</strong> [mʌm] соответствуют нашим <strong>папа</strong> и
+      <strong>мама</strong>. Когда идет речь о ваших собственных родителях, эти слова становятся как бы именами и пишутся
+      с большой буквы: <strong>Mum</strong>, <strong>Dad</strong>. Есть более ласковое обращение: <strong>Mummy</strong>
+      ['mʌmi] (мамочка), <strong>Daddy</strong> ['dædi] (папочка).
+      В более официальных случаях используются <strong>father</strong> ['fɑ:ðǝ] (отец)  и <strong>mother</strong> ['mʌðǝ] (мать) .
+    </p>
+
+
+  <p></p>
+    <p></p>
+    <p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
