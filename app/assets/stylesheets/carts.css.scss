@@ -2,18 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-	.cart_title {
-		font: 140% bold;
-		padding-bottom: 20px;
-		}
-
-.item_price, .total_line {
-	text-align: left;
+.cart_title {
+  font: 140% bold;
+  padding-bottom: 20px;
 }
 
-.total_line .total_cell {
-	font-weight: bold;
-	border-top: 1px solid #595;
-	}
+.item_price, .total_line {
+  bordet-top: 1px solid black;
+  text-align: left;
+}
 

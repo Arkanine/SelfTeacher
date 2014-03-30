@@ -1,37 +1,36 @@
 
-<div class='teach_nav'>
+<div class='store_nav'>
   <div id='left_col' class="list-group">
-    <a href="#" class="list-group-item active">
-      SelfTeacher
-    </a>
 
+    <div id='cart'>
+      <a href="#" class="list-group-item active">Кошик</a>
 
-    <div class="cart_title">Ваша корзина</div>
-    <table>
-      <%= render(cart.line_items) %>
+      <table class='cart_table'>
+        <tbody>
+          <%= render(cart.line_items) %>
+          <tr>
+            <td colspan="2">Всього:</td>
+            <td ><%= number_to_currency(cart.total_price) %></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <tr class="total_line">
-        <td colspan="2">Total</td>
-        <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-      </tr>
-    </table>
-
-    <%= button_to 'Empty cart', cart, method: :delete, confirm: 'Are you sure?' %>
-
-    <%= button_to 'Checkout', new_order_path, method: :get %>
-
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <!-- <li><%= link_to 'Граматика', products_path %></li> -->
-        <% @categories = Category.all %>
-        <% @categories.each do |category| %>
-
-        <li><%= link_to category.name, category %></li>
-   <% end %>
-      </ul>
-  </div>
+      <div id='cart_buttons' class="btn-group">
+        <%= link_to 'Empty cart', cart, method: :delete, confirm: 'Are you sure?', class:'btn btn-default' %>
+        <%= link_to 'Checkout', new_order_path, method: :get, class:'btn btn-default' %>
+      </div>
+    </div>
 
   </div>
+
+  <div class='categories'>
+    <a href="#" class="list-group-item active">Література</a>
+    <% @categories = Category.all %>
+    <% @categories.each do |category| %>
+        <%= link_to category.name, category, class:'list-group-item' %>
+    <% end %>
+  </div>
+
 </div>
 
 

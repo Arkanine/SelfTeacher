@@ -1,5 +1,6 @@
-<tr>
-	<td><%= line_item.quantity %>&times;</td>
-	<td><%= line_item.product.title %></td>
-	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+
+<tr class='line_item'>
+	<td width="20%"><%= line_item.quantity %></td>
+	<td width="60%"><h5><%= line_item.product.title %></h5></td>
+	<td class="item_price" width="20%"><%= number_to_currency(line_item.total_price) %></td>
 </tr>

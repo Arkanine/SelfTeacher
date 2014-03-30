@@ -1,37 +1,41 @@
-<<<<<<< HEAD
-=======
 Product.delete_all
 
 Product.create(title:'Book1', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'1.89' )
+			you should add Ruby to your toolbox.', price:'1.89', category_id:1)
 Product.create(title:'Book2', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'4.89' )
+			you should add Ruby to your toolbox.', price:'4.89', category_id:1 )
 Product.create(title:'Book3', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'10.89' )
+			you should add Ruby to your toolbox.', price:'10.89', category_id:2 )
 Product.create(title:'Book4', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'15.89' )
+			you should add Ruby to your toolbox.', price:'15.89', category_id:2)
 Product.create(title:'Book5', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'20.89' )
+			you should add Ruby to your toolbox.', price:'20.89', category_id:3)
 Product.create(title:'Book6', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'25.89' )
+			you should add Ruby to your toolbox.', price:'25.89', category_id:3)
 Product.create(title:'Book7', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'30.89' )
+			you should add Ruby to your toolbox.', price:'30.89', category_id:4)
 Product.create(title:'Book8', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'35.89' )
+			you should add Ruby to your toolbox.', price:'35.89', category_id:4)
 Product.create(title:'Book9', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'40.89' )
+			you should add Ruby to your toolbox.', price:'40.89', category_id:5)
 Product.create(title:'Book10', description:'Ruby is the fastest growing and most exciting dynamic language
 			out there. If you need to get working programs delivered fast,
-			you should add Ruby to your toolbox.', price:'50.89' )
+			you should add Ruby to your toolbox.', price:'50.89', category_id:5)
+
+Category.create(name:'Підручники з англійської')
+Category.create(name:'Художня література')
+Category.create(name:'Дитяча література')
+Category.create(name:'Англійська граматика')
+Category.create(name:'Словники')
 
 Track.create(name:'noname', sound:'http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3')
 
@@ -371,5 +375,3 @@ Answer.create(content:'will have finished', question_id:62, isright: true)
 Answer.create(content:'will finish', question_id:62)
 Answer.create(content:'will finished', question_id:62)
 
-
->>>>>>> 7cc14c606febcc8913ba5f5163f502e73b6baeaa

@@ -1,14 +1,5 @@
 Teacher::Application.routes.draw do
 
-<<<<<<< HEAD
-
-
-  resources :categories
-
-=======
->>>>>>> 7cc14c606febcc8913ba5f5163f502e73b6baeaa
-  resources :orders
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # teach_routes
@@ -30,7 +21,9 @@ Teacher::Application.routes.draw do
 
   #shop_routes
   get 'store', to: 'store#index'
+  resources :categories
   resources :products
+  resources :orders
   resources :line_items
   resources :carts
   resources :rubrics do
@@ -57,7 +50,6 @@ Teacher::Application.routes.draw do
   get 'training_program',      to:'static_pages#training_program'
   get 'about',                 to:'static_pages#about'
   get 'contact',               to:'static_pages#contact'
-
   get 'general_course',        to:'static_pages#general_course'
   get 'business_course',       to:'static_pages#business_course'
   get 'special_course',        to:'static_pages#special_course'
