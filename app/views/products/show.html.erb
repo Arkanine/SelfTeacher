@@ -1,12 +1,33 @@
-<div id="prev" class="col-md-6">
 
-		
-			<p><%= image_tag @product.image_url(:thumb).to_s %></p>
-			<p><h3><%= @product.title %></h3></p>
-			<p><%= sanitize(@product.description) %></p>
-			
-			<p><span class="price"><%= number_to_currency(@product.price) %></span></p>
-			<p><%= button_to 'Add to Cart', line_items_path(product_id: @product) %></p>
-	
-	<h3><%= link_to 'Магазин', store_path %></h3>
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render @cart %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Оформлення замовлення</h4>
+    <div class='product_content'>
+
+
+        <div class='product_image'>
+          <%= image_tag @product.image_url(:thumb).to_s %>
+        </div>
+        <div class='info_content'>
+          <p><h4><%= @product.title %></h4></p>
+          <hr>
+          <p><b>Категорія: </b><%= link_to @product.category.name, @product.category %></p>
+          <p><b>Автор: </b><%= @product.author %></p>
+          <p><b>Видавництво: </b><%= @product.edition %></p>
+          <p><b>Від видавництва: </b><%= sanitize(@product.description) %></p>
+          <p><b>Вартість: </b><span class="price"><%= @product.price %> грн.</span></p>
+          <hr>
+
+          <%= button_to 'Add to Cart', line_items_path(product_id: @product), class:'btn btn-primary btn-xlarge' %>
+        </div>
+
+
+    </div>
+  </div>
+  <div class="col-md-1"></div>
 </div>

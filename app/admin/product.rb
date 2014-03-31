@@ -6,6 +6,7 @@ ActiveAdmin.register Product do
     column :title
     column :author
     column :description
+    column :edition
     column :image
     column :price, :sortable => :price do |product|
       number_to_currency product.price

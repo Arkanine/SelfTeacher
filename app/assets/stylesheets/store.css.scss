@@ -167,6 +167,7 @@ hr {
   }
 }
 
+/*Бокове меню магазину*/
 .store_nav {
   margin: 40px 0 0 0;
   padding: 15px;
@@ -213,6 +214,7 @@ hr {
   }
 }
 
+/* Store/index */
 .line_item {
   td {
     font-size:12px;
@@ -275,5 +277,39 @@ hr {
       float:left;
     }
 
+  }
+}
+
+
+/* products/show */
+.product_content {
+  min-height:300px;
+  list-style-type: none;
+  padding: 15px 30px;
+  background-color: white;
+
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -khtml-border-radius: 6px;
+
+  .product_image {
+    float:left;
+
+    img {
+      padding:3px;
+      border: 1px solid #DEDEDE;
+
+      border-radius: 6px;
+      -moz-border-radius: 6px;
+      -khtml-border-radius: 6px;
+    }
+  }
+  .info_content {
+    padding-left: 175px;
+
+    h4 {
+      margin:0;
+      padding:0;
+    }
   }
 }
