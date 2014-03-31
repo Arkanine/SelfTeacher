@@ -1,6 +1,7 @@
 
 <tr class='line_item'>
-	<td width="20%"><%= line_item.quantity %></td>
-	<td width="60%"><h5><%= line_item.product.title %></h5></td>
-	<td class="item_price" width="20%"><%= number_to_currency(line_item.total_price) %></td>
+	<td width="5%"><%= line_item.quantity %></td>
+    <td width="5%">x</td>
+	<td width="50%"><h5><%= sanitize(truncate line_item.product.title, length: 11) %></h5></td>
+	<td width="25%"><%= line_item.total_price %> грн.</td>
 </tr>

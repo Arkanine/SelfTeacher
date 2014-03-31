@@ -4,21 +4,22 @@
 
     <div id='cart'>
       <a href="#" class="list-group-item active">Кошик</a>
+      <% if cart.line_items.any? %>
+        <table class='cart_table'>
+          <tbody>
+            <%= render(cart.line_items) %>
+            <tr class='total_price'>
+              <td colspan="3">Загальна ціна:</td>
+              <td width='30%'><strong><%= cart.total_price %> грн.</strong></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <table class='cart_table'>
-        <tbody>
-          <%= render(cart.line_items) %>
-          <tr>
-            <td colspan="2">Всього:</td>
-            <td ><%= number_to_currency(cart.total_price) %></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div id='cart_buttons' class="btn-group">
-        <%= link_to 'Empty cart', cart, method: :delete, confirm: 'Are you sure?', class:'btn btn-default' %>
-        <%= link_to 'Checkout', new_order_path, method: :get, class:'btn btn-default' %>
-      </div>
+        <div id='cart_buttons' class="btn-group">
+          <%= link_to 'Очистити', cart, method: :delete, confirm: 'Are you sure?', class:'btn btn-default' %>
+          <%= link_to 'Замовти', new_order_path, method: :get, class:'btn btn-default' %>
+        </div>
+      <% end %>
     </div>
 
   </div>

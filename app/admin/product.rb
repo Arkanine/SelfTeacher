@@ -4,6 +4,7 @@ ActiveAdmin.register Product do
   index do
     column :id 
     column :title
+    column :author
     column :description
     column :image
     column :price, :sortable => :price do |product|

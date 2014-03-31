@@ -1,0 +1,39 @@
+<div id='store_carousel'>
+  <div class='carousel_header'>
+    <span id='new_header'>ПОПУЛЯРНА ЛІТЕРАТУРА</span>
+  </div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Carousel items -->
+    <div id='carousel_inner' class="carousel-inner">
+      <div class="active item">
+        <%= image_tag(@products.find_by(title:'Book1').image, class:'product_image', width:'150', height:'200') %>
+        <div class='text'>
+          <h5 align='center'><%= link_to @products.find_by(title:'Book1').title, @products.find_by(title:'Book1') %></h5>
+          <p><%= sanitize( truncate @products.find_by(title:'Book1').description, length: 400) %></p>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag(@products.find_by(title:'Book2').image, class:'product_image', width:'150', height:'200') %>
+        <div class='text'>
+          <h5 align='center'><%= link_to @products.find_by(title:'Book2').title, @products.find_by(title:'Book2') %></h5>
+          <p><%= sanitize( truncate @products.find_by(title:'Book2').description, length: 400) %></p>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag(@products.find_by(title:'Book10').image, class:'product_image', width:'150', height:'200') %>
+        <div class='text'>
+          <h5 align='center'><%= link_to @products.find_by(title:'Book10').title, @products.find_by(title:'Book10') %></h5>
+          <p><%= sanitize( truncate @products.find_by(title:'Book10').description, length: 400) %></p>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+      <span id='slide_glyph_left' class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+      <span id='slide_glyph_right' class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>

@@ -1,6 +1,22 @@
-<div class="depot_form">
-	<fieldset>
-		<legend>Please Enter Your Details</legend>
-		<%= render 'form' %>
-	</fieldset>
+
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render @cart %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Оформлення замовлення</h4>
+    <div class='levels_content'>
+
+      <div class="depot_form">
+        <fieldset>
+          <legend>Будьласка введіть ваші дані</legend>
+          <%= render 'form' %>
+        </fieldset>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-1"></div>
 </div>

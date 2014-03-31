@@ -84,6 +84,6 @@ location: @order }
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :address, :email, :phone, :pay_type)
     end
 end
