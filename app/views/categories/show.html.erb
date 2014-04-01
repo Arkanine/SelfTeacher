@@ -9,22 +9,6 @@
   <div id='central_col' class="col-md-7">
     <div class='categories_content'>
 
-      <div id='category_menue' class="collapse navbar-collapse">
-        <a class="navbar-brand" href="#"><%= @category.name %></a>
-
-        <div class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Сортувати<b class="caret"></b></a>
-            <ul id='drop_menu' class="dropdown-menu">
-              <li class='drop_link'><%= sortable 'title' %></li>
-              <li class='drop_link'><%= link_to 'По імені(від Я до А)', '#' %></li>
-              <li class='drop_link'><%= sortable 'price' %></li>
-              <li class='drop_link'><%= link_to 'По ціні(низька > висока)', '#' %></li>
-            </ul>
-          </li>
-        </div>
-      </div>
-
       <div class='row'>
         <% @products.each do |product| %>
             <div class="col-sm-12 col-md-4">
@@ -48,7 +32,9 @@
         <% end %>
       </div>
 
-      <%= will_paginate @products %>
+      <div class='paginate'>
+        <%= paginate @products %>
+      </div>
 
     </div>
   </div>

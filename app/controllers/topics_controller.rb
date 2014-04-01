@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = Comment.where(topic_id: params[:id]).page(params[:page]).per(9)
   end
 
   def new

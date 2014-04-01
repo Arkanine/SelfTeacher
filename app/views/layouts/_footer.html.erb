@@ -6,16 +6,16 @@
       <div class="col-md-4">
         <ul class='footer_nav'>
           <li>Навчання</li>
-          <li><%= link_to 'Розпочати навчання', about_path %></li>
-          <li><%= link_to 'Курси англійської', rubrics_path %></li>
-          <li><%= link_to 'Оплата навчання', store_path %></li>
-          <li><%= link_to 'Проти тест', store_path %></li>
+          <li><%= link_to 'Головна сторінка', root_path %></li>
+          <li><%= link_to 'Індивідуальні заняття', individual_learn_page_path %></li>
+          <li><%= link_to 'Заняття по Skype', skype_learn_page_path %></li>
+          <li><%= link_to 'Контакти', contact_path %></li>
         </ul>
       </div>
 
       <div id='central_footer_menu' class="col-md-4">
         <ul class='footer_nav'>
-          <li>Магазин книг</li>
+          <li>Література</li>
           <li><%= link_to 'Найпопулярніше', contact_path  %></li>
           <li><%= link_to 'Знайти літературу', about_path %></li>
           <li><%= link_to 'Розпродаж', rubrics_path %></li>
@@ -26,10 +26,10 @@
       <div class="col-md-4">
         <ul class='footer_nav'>
           <li>Форум</li>
-          <li><%= link_to 'Остання тема', contact_path  %></li>
-          <li><%= link_to 'Правила форуму', about_path %></li>
-          <li><%= link_to 'Відгуки користувачів', rubrics_path %></li>
-          <li><%= link_to 'Всі рубрики', store_path %></li>
+          <li><%= link_to 'Рубрики', rubrics_path %></li>
+          <li><%= link_to 'Остання тема', Topic.all.last  %></li>
+          <li><%= link_to 'Правила форуму', '#' %></li>
+          <li><%= link_to 'Відгуки користувачів', Topic.find_by_name('Відгуки') %></li>
         </ul>
       </div>
     </div>

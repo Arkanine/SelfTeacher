@@ -49,7 +49,5 @@ gem 'carrierwave'
 
 gem 'soundmanager2-rails'
 
-gem 'will_paginate', '~> 3.0'
 
-gem 'ransack'
 
