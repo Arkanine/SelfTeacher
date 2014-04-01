@@ -4,15 +4,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = if params[:category].present?
-        Product.where(category_id: params[:category]).includes(:title).order("products.title ASC")
-      else
-        Product.search(params[:search])
+    @products = Product.search(params[:search])
         #@writing = Product.where(category_id: params[:category]).last
        # @reading = Product.where(category_id: params[:category]).first
         #     !!!!!!!!!!  ИЛИ  !!!!!!!!!!!!!!
         #@grammar = Product.where(category_id: 3)
-      end
   end
 
   # GET /products/1
