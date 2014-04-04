@@ -1,4 +1,13 @@
 module ApplicationHelper
+  def full_title(page_title)
+    base_title = "SelfTeacher"
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} | #{page_title}"
+    end
+  end
+
   def allow_test
     if current_user
       link_to 'Пройти тест', Test.find_by_name('Тест на знання ангійської  мови'), class:'list-group-item'
