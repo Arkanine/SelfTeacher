@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   def index
+    @lessons = Lesson.search(params[:search])
   end
 
   def show

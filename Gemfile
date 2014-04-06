@@ -49,3 +49,5 @@ gem 'carrierwave'
 
 gem 'soundmanager2-rails'
 
+
+

@@ -25,6 +25,8 @@
           <%= submit_tag 'Поиск', :name => nil, class:'btn btn-default' %>
       <% end %>
 
+
+
       <div id="login" class="nav navbar-nav navbar-right">
         <% if current_user %>
         <li><%= link_to current_user.email, current_user %></li>

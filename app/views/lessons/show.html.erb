@@ -19,7 +19,13 @@
 
       <% end %>
     </ul>
+
+    <ul class="pager">
+      <li><%= link_to 'Попередній урок', Lesson.find_by(id:(@lesson.id-1)) %></li>
+      <li><%= link_to 'Наступний урок', Lesson.find_by(id:(@lesson.id+1)) %></li>
+    </ul>
   </div>
   <div class="col-md-1"></div>
 </div>
+
 

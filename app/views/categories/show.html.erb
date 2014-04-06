@@ -1,18 +1,43 @@
-<table>
-    <% @products.each do |product| %>
-        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-            <td>
-                <%= image_tag(product.image_url, size:'100x150') %>
-            </td>
 
-            <td class="list_description">
-                <dl>
-                  <dt><%= product.title %></dt>
-                  <dd><%= (strip_tags(product.description)) %></dd>
-                  <span class="price"><%= number_to_currency(product.price) %></span>
-                  <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
-                </dl>
-              </td>
-            </tr>
+
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render @cart %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <div class='categories_content'>
+
+      <div class='row'>
+        <% @products.each do |product| %>
+            <div class="col-sm-12 col-md-4">
+              <div class="thumbnail">
+
+                <% if (product.image).blank?  %>
+                    <%= image_tag('blank.gif', class:'product_image', width:'150', height:'200') %>
+                <% else %>
+                    <%= link_to image_tag(product.image, class:'product_image', width:'150', height:'200'), product %>
+                <% end %>
+
+                <div class="caption">
+                  <%= link_to product.title, product %><hr>
+                  <p><%= sanitize( truncate product.description, length: 100) %></p>
+                  <span id='price'>Ціна: <%= number_to_currency(product.price) %></span>
+                  <%= button_to 'До корзини', line_items_path(product_id: product), class:'btn btn-primary btn-xlarge' %>
+                </div>
+
+              </div>
+            </div>
         <% end %>
-      </table>
+      </div>
+
+      <div class='paginate'>
+        <%= paginate @products %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-1"></div>
+</div>
