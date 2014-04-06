@@ -23,7 +23,13 @@ Teacher::Application.routes.draw do
   get 'store', to: 'store#index'
   resources :categories
   resources :products
-  resources :orders
+  
+  resources :orders do
+    get 'confirm/:order', to: 'orders#confirm'
+
+  end
+
+
   resources :line_items
   resources :carts
   resources :rubrics do

@@ -9,10 +9,10 @@ Teacher::Application.configure do
 	config.action_mailer.smtp_settings = {
 address:         "smtp.gmail.com",
 port:            587,
-domain:          "domain.of.sender.net",
+domain:          "http://0.0.0.0:3000",
 authentication:  "plain",
-user_name:       "dave",
-password:        "secret",
+user_name:       "selfteachershop@gmail.com",
+password:        "gf765bv21",
 enable_starttls_auto: true
 }
 end
