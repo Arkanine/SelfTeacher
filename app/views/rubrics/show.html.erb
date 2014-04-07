@@ -1,18 +1,14 @@
 <% provide(:title, "Forum | #{@rubric.name}") %>
 
-
 <div class="row">
   <div class="col-md-2"></div>
 
   <div id='central_col' class="col-md-8">
-
     <h4><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h4>
 
     <div class="panel panel-default">
       <div class="panel-heading"><%= @rubric.body %></div>
-
       <table class="table">
-
         <thread>
           <tr>
             <th width="5%"></th>
@@ -24,8 +20,8 @@
         </thread>
 
         <% if @topics.where(rubric_id: @rubric.id).any? %>
-          <% topic = @topics.where(rubric_id: @rubric.id) %>
-          <% topic.each do |t| %>
+          <% topics = @topics.where(rubric_id: @rubric.id) %>
+          <% topics.each do |t| %>
 
             <tbody>
               <tr>
@@ -36,16 +32,16 @@
                 <td>
                 <% if t.comments.any? %>
                 <% comments = t.comments %>
-                      <span class='comment_time'><%= distance_of_time_in_words_to_now comments.last.created_at %> ago by</span>
-                      <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
+                  <span class='comment_time'><%= distance_of_time_in_words_to_now comments.last.created_at %> ago by</span>
+                  <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
                 <% else %>
                   <span class='comment_time'>topic has no comments</span>
                 <% end %>
                 </td>
                 <td align='center'>
                   <% if t.user == current_user %>
-                      <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
-                      <%= link_to '', t, method: :delete, data: { confirm: 'Точно-точно?' }, class:'glyphicon glyphicon-trash' %>
+                    <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
+                    <%= link_to '', t, method: :delete, data: { confirm: 'Точно-точно?' }, class:'glyphicon glyphicon-trash' %>
                   <% end %>
                 </td>
               </tr>
@@ -65,5 +61,4 @@
   </div>
 
   <div class="col-md-2"></div>
-
 </div>

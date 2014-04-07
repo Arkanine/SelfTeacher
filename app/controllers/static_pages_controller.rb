@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
+    @respone = Topic.find_by_name('Відгуки')
+    @test = Test.find_by_name('Тест на знання ангійської  мови')
   end
 
   def help

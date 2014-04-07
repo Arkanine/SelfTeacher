@@ -1,3 +1,5 @@
+<%= provide(:title, @lesson.name) %>
+
 <div id='teach_pages' class="row">
   <div class="col-md-1"></div>
   <div class="col-md-3">
@@ -6,19 +8,17 @@
 
   <div id='central_col' class="col-md-7">
     <h4 class='level_h4'><%= link_to @lesson.level.name, @lesson.level %> > <%= @lesson.name %></h4>
-    <ul class='levels_content'>
 
+    <div class='levels_content'>
       <%= render "/lessons/lessons_content/lesson#{@lesson.id.to_s}" %>
 
       <% if @lesson.exercises.any? %>
-
-          <% @lesson.exercises.each do |exercise| %>
-            <h5><%= exercise.name %></h5>
-            <div class='lesson_sontent'><%= exercise.content %></div>
-          <% end %>
-
+        <% @lesson.exercises.each do |exercise| %>
+          <h5><%= exercise.name %></h5>
+          <div class='lesson_sontent'><%= exercise.content %></div>
+        <% end %>
       <% end %>
-    </ul>
+    </div>
 
     <ul class="pager">
       <li><%= link_to 'Попередній урок', Lesson.find_by(id:(@lesson.id-1)) %></li>

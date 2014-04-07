@@ -80,14 +80,6 @@ ActiveRecord::Schema.define(version: 20140331145449) do
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
 
-  create_table "exercises", force: true do |t|
-    t.string   "name"
-    t.text     "content"
-    t.integer  "lesson_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "lessons", force: true do |t|
     t.string   "name"
     t.text     "content"

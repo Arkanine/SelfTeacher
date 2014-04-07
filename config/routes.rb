@@ -2,46 +2,48 @@ Teacher::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # teach_routes
-  resources :levels, only: [:show, :index] do
+
+  # teach routes
+  resources :levels, only: [:show] do
     resources :lessons
   end
-  resources :lessons, only: [:show, :index] do
-    resources :exercises
-  end
-  resources :exercises
 
+  resources :lessons, only: [:show, :index]
   resources :tracks
 
-  # users_&_sessions_routes
+  # users & sessions_routes
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :create]
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
 
-  #shop_routes
+  # shop routes
   get 'store', to: 'store#index'
-  resources :categories
+  resources :categories, only: [:show]
   resources :products
   resources :orders
   resources :line_items
-  resources :carts
-  resources :rubrics do
+  resources :carts, only: [:show]
+
+  # forum routes
+  resources :rubrics, only: [:show, :index] do
     resources :topics
   end
+
   resources :topics do
     resources :comments
   end
+
   resources :comments
 
-  # test_routes
+  # test routes
   resources :tests do
     member do
       post 'send_results' => 'tests#send_results'
     end
   end
 
-  # pages_routes
+  # static pages routes
   root 'static_pages#home'
   get 'individual_learn_page', to:'static_pages#individual_learn_page'
   get 'skype_learn_page',      to:'static_pages#skype_learn_page'

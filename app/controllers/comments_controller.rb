@@ -22,29 +22,28 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to topic_path(@comment.topic)
     else
-      redirect_to :back, alert: 'Проверьте сообщение'
+      redirect_to :back, alert: 'Перевірте повідомлення'
     end
   end
 
   def edit
     @topic = @comment.topic
-    @button = 'Исправить компанию'
   end
 
   def update
     if @comment.update(comment_params)
-      redirect_to @comment.topic, notice: 'Тег обновлен'
+      redirect_to @comment.topic
     else
-      redirect_to :back, alert: 'Ошибка'
+      redirect_to :back, alert: 'Помилка'
     end
   end
 
   def destroy
     @comment.destroy
-    redirect_to @comment.topic, notice: 'Компания удалена'
+    redirect_to @comment.topic
   end
 
-  private
+private
 
   def comment_params
     params.require(:comment).permit(:name, :content, :rubric_id, :parent_id)

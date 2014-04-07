@@ -8,60 +8,51 @@
     <h4>Рубрики</h4>
 
     <div class="panel panel-default">
-      <!-- Default panel contents -->
       <div class="panel-heading">Panel heading</div>
 
-        <table class="table">
-          <thread>
-            <tr>
-              <th width="5%"></th>
-              <th width="40%">Forum</th>
-              <th width="10%">Topics</th>
-              <th width="10%">Comments</th>
-              <th width="40%">Last Comment</th>
-            </tr>
-          </thread>
+      <table class="table">
 
-          <% for rubric in @rubrics %>
+        <thread>
+          <tr>
+            <th width="5%"></th>
+            <th width="40%">Forum</th>
+            <th width="10%">Topics</th>
+            <th width="10%">Comments</th>
+            <th width="40%">Last Comment</th>
+          </tr>
+        </thread>
 
+        <% for rubric in @rubrics %>
           <tbody>
             <tr>
               <td align="center"><span class="glyphicon glyphicon-share-alt"></span></td>
-
               <td><%= link_to h(rubric.name), rubric_path(rubric.id) %><br>
                 <%=h rubric.body %></td>
-
               <td><%= rubric.topics.count %></td>
-
               <td><%= rubric.comments.count %></td>
-
               <td>
                 <% if rubric.comments.any? %>
                   <% comments = rubric.comments %>
-
                   <%= link_to comments.last.topic.name, comments.last.topic %><br>
                   <span class='comment_time'>
                     <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by
                     <%= link_to comments.last.user.name, comments.last.user %>
                   </span>
-
                 <% elsif %>
                   <% if rubric.topics.any? %>
                     <%= link_to rubric.topics.last.name, rubric.topics.last %><br>
                     <span class='comment_time'>This topic has no comments</span>
                   <% end %>
-
                 <% else %>
                   <span class='comment_time'>Empty</span>
                 <% end %>
               </td>
-
             </tr>
           </tbody>
+        <% end %>
 
-          <% end %>
-        </table>
-      </div>
+      </table>
+    </div>
   </div>
   </div>
   <div class="col-md-2"></div>

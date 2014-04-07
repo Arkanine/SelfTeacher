@@ -58,10 +58,6 @@ Lesson.create(name: 'Просто букви і звуки', content: 'Бла б
 Lesson.create(name: 'Grammar - Граматика', content: 'Бла бла бла', level_id: 1)
 Lesson.create(name: 'Pronunciation - Вимова', content: 'Бла бла бла', level_id: 1)
 
-Exercise.create(name: 'Exercise 1: Розставте слова в алфавітному порядку', content: 'Dog, girl, go, acorn, tree, and, spell, sit, dad, conversation, well, he, what, take, egg, make, sorry, little, big, wife, question, word.', lesson_id: 1)
-Exercise.create(name: 'Exercise 2. Spell these words. - Назвіть по буквам ці слова.', content: 'Father, money, which, quarter, seem, jam, gust, peck, next, zebra, capital.', lesson_id: 1)
-
-
 # Test for knowlage
 Test.create(name:'Тест на знання ангійської  мови')
 
