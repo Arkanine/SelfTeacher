@@ -6,12 +6,13 @@
   </div>
 
   <div id='central_col' class="col-md-7">
-    <h4 class='level_h4'>Оформлення замовлення</h4>
+    <h4 class='level_h4'>Література</h4>
     <div class='product_content'>
 
       <div class='product_image'>
         <%= image_tag @product.image_url(:thumb).to_s, style:'width:200px; height:300px' %>
       </div>
+
       <div class='info_content'>
         <p><h4><%= @product.title %></h4></p>
         <hr>
@@ -22,10 +23,9 @@
         <p><b>Вартість: </b><span class="price"><%= @product.price %> грн.</span></p>
         <hr>
 
-
-          <%= button_to 'До корзини', line_items_path(product_id: @product), class:'btn btn-primary btn-xlarge' %>
-        </div>
+        <%= button_to 'До корзини', line_items_path(product_id: @product), class:'btn btn-primary btn-xlarge' %>
+      </div>
 
     </div>
   </div>
-  
+</div>
