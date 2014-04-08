@@ -12,15 +12,15 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label :name, "Head" %><br>
+      <%= f.label :name, "Назва теми" %><br>
       <%= f.text_field :name, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :content, "Content" %><br>
+      <%= f.label :content, "Зміст" %><br>
       <%= f.text_area :content, rows: '10', class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= f.submit "Submit", class: 'btn btn-primary' %>
+      <%= f.submit "Створити", class: 'btn btn-primary' %>
     </div>
 <% end %>

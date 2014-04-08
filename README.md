@@ -1,28 +1,26 @@
-== README
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TODO Comment out this rules if you are OK with secrets been uploaded to the repo
+config/initializers/secret_token.rb
+config/secrets.yml
 
-Things you may want to cover:
+## Environment normalisation:
+/.bundle
+/vendor/bundle
 
-* Ruby version
+# these should all be checked in to normalise the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc

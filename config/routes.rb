@@ -13,7 +13,7 @@ Teacher::Application.routes.draw do
 
   # users & sessions_routes
   resources :users
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
 
@@ -27,9 +27,8 @@ Teacher::Application.routes.draw do
 
   end
 
-
   resources :line_items
-  resources :carts, only: [:show]
+  resources :carts, only: [:show, :destroy]
 
   # forum routes
   resources :rubrics, only: [:show, :index] do
