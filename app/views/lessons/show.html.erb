@@ -11,13 +11,6 @@
 
     <div class='levels_content'>
       <%= render "/lessons/lessons_content/lesson#{@lesson.id.to_s}" %>
-
-      <% if @lesson.exercises.any? %>
-        <% @lesson.exercises.each do |exercise| %>
-          <h5><%= exercise.name %></h5>
-          <div class='lesson_sontent'><%= exercise.content %></div>
-        <% end %>
-      <% end %>
     </div>
 
     <ul class="pager">
