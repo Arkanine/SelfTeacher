@@ -1,12 +1,9 @@
 class OrderMailer < ActionMailer::Base
   default from: "from@example.com"
 
-def welcome_email(order)
-	@order = order
-	
-	mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+  def welcome_email(order)
+  	@order = order
+	  mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
-	
 end
 
-end
