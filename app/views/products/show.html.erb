@@ -22,29 +22,10 @@
         <p><b>Вартість: </b><span class="price"><%= @product.price %> грн.</span></p>
         <hr>
 
-<<<<<<< HEAD
-        <div class='product_image'>
-          <%= image_tag @product.image_url(:thumb).to_s %>
-        </div>
-        <div class='info_content'>
-          <p><h4><%= @product.title %></h4></p>
-          <hr>
-          <p><b>Категорія: </b><%= link_to @product.category.name, @product.category %></p>
-          <p><b>Автор: </b><%= @product.author %></p>
-          <p><b>Видавництво: </b><%= @product.edition %></p>
-          <p><b>Від видавництва: </b><%= sanitize(@product.description) %></p>
-          <p><b>Вартість: </b><span class="price"><%= @product.price %> грн.</span></p>
-          <hr>
 
           <%= button_to 'До корзини', line_items_path(product_id: @product), class:'btn btn-primary btn-xlarge' %>
         </div>
 
-=======
-        <%= button_to 'Add to Cart', line_items_path(product_id: @product), class:'btn btn-primary btn-xlarge' %>
-      </div>
->>>>>>> 259a6c9f64a6ab31f50340bf31442d62168bd3c2
-
     </div>
   </div>
-  <div class="col-md-1"></div>
-</div>
+  
