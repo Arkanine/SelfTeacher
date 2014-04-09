@@ -2,6 +2,17 @@
 <div class='store_nav'>
   <div id='left_col' class="list-group">
 
+    <div id='cart_search'>
+
+      <%= form_tag products_path, :method => 'get', class:'search_form', role:'search' do %>
+          <div class="form-group">
+            <%= text_field_tag :search, params[:search], class:'form-control', placeholder:'Знайти ...' %>
+          </div>
+          <%= submit_tag 'Пошук', :name => nil, class:'btn btn-default' %>
+      <% end %>
+
+    </div>
+
     <div id='cart'>
       <a href="#" class="list-group-item active">Кошик</a>
       <% if cart.line_items.any? %>
@@ -22,16 +33,15 @@
       <% end %>
     </div>
 
-  </div>
-
-  <div class='categories'>
-    <a href="#" class="list-group-item active">Література</a>
-    <% @categories = Category.all %>
-    <% @categories.each do |category| %>
+    <div class='categories'>
+      <a href="#" class="list-group-item active">Література</a>
+      <% @categories = Category.all %>
+      <% @categories.each do |category| %>
         <%= link_to category.name, category, class:'list-group-item' %>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
+  </div>
 </div>
 
 

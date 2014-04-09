@@ -4,5 +4,7 @@ ActiveAdmin.register Track do
   index do
     column :name
     column :sound
+
+    default_actions
   end
 end
