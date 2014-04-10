@@ -371,3 +371,5 @@ Answer.create(content:'will have finished', question_id:62, isright: true)
 Answer.create(content:'will finish', question_id:62)
 Answer.create(content:'will finished', question_id:62)
 
+Grammar.create(name: '', content: '', basis:)
+

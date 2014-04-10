@@ -18,11 +18,11 @@
         <li><%= link_to 'Магазин', store_path %></li>
       </ul>
 
-      <%= form_tag products_path, :method => 'get', class:'navbar-form navbar-left', role:'search' do %>
+      <%= form_tag grammars_path, :method => 'get', class:'navbar-form navbar-left', role:'search' do %>
         <div class="form-group">
-          <%= text_field_tag :search, params[:search], class:'form-control', placeholder:'Найти ...' %>
+          <%= text_field_tag :search, params[:search], class:'form-control', placeholder:'Знайти граматику ...' %>
         </div>
-        <%= submit_tag 'Поиск', :name => nil, class:'btn btn-default' %>
+        <%= submit_tag 'Пошук', :name => nil, class:'btn btn-default' %>
       <% end %>
 
 

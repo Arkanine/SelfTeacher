@@ -1,5 +1,4 @@
 Teacher::Application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -10,6 +9,7 @@ Teacher::Application.routes.draw do
 
   resources :lessons, only: [:show, :index]
   resources :tracks
+  get 'grammars', to:'grammars#index'
 
   # users & sessions_routes
   resources :users

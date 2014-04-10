@@ -1,0 +1,22 @@
+
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render 'static_pages/left_menue' %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Grammar</h4>
+
+    <div class='levels_content'>
+      <% @grammars.each do |grammar| %>
+        <h5><%= grammar.name %></h5>
+        <%= grammar.content.html_safe %>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+
