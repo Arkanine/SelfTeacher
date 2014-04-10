@@ -4,6 +4,7 @@ ActiveAdmin.register Grammar do
   index do
     column :name
     column :content
+    column :basis
 
     default_actions
   end

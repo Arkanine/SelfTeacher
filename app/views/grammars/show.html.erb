@@ -5,18 +5,10 @@
   </div>
 
   <div id='central_col' class="col-md-7">
-    <h4 class='level_h4'>Результат пошуку</h4>
-
+    <h4 class='level_h4'><%= @grammar.name %></h4>
     <div class='levels_content'>
-      <% @grammars.each do |grammar| %>
-        <h5><%= link_to grammar.name, grammar %></h5>
-        <hr>
-      <% end %>
+      <%= @grammar.content.html_safe%>
     </div>
-
   </div>
   <div class="col-md-1"></div>
 </div>
-
-
-

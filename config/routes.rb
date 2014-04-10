@@ -9,7 +9,7 @@ Teacher::Application.routes.draw do
 
   resources :lessons, only: [:show, :index]
   resources :tracks
-  get 'grammars', to:'grammars#index'
+  resources :grammars, only: [:show, :index]
 
   # users & sessions_routes
   resources :users
@@ -61,6 +61,7 @@ Teacher::Application.routes.draw do
   get 'business_course',       to:'static_pages#business_course'
   get 'special_course',        to:'static_pages#special_course'
   get 'training_course',       to:'static_pages#training_course'
+  get 'english_grammar',       to:'static_pages#grammar'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

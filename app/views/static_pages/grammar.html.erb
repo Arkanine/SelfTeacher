@@ -1,0 +1,42 @@
+<div id='teach_pages' class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <%= render 'static_pages/left_menue' %>
+  </div>
+
+  <div id='central_col' class="col-md-7">
+    <h4 class='level_h4'>Довідник з граматики англійської мови</h4>
+    <div class='levels_content'>
+      <p>
+        У вас з'явилися сумніви в правильності вживання того чи іншого артикля, складання граматичної конструкції або вибору
+        прикметника? - Наш онлайн довідник з граматики англійської мови покликаний вирішити всі ваші сумніви і допомогти в
+        освоєнні труднощів англійської граматики.
+      </p><hr>
+
+      <div id='grammar_list'>
+        <h5>Іменник (The Noun)</h5>
+        <ul>
+          <% @grammar_nouns.each do |noun| %>
+            <li><%= link_to noun.name, noun %></li>
+          <% end %>
+        </ul><hr>
+
+        <h5>Прикметник (The Adjective)</h5>
+        <ul>
+          <% @grammar_adjectives.each do |noun| %>
+              <li><%= link_to noun.name, noun %></li>
+          <% end %>
+        </ul><hr>
+
+        <h5>Числівник (The Numeral)</h5>
+        <ul>
+          <% @grammar_numerals.each do |noun| %>
+              <li><%= link_to noun.name, noun %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>

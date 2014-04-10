@@ -24,4 +24,12 @@ class StaticPagesController < ApplicationController
 
   def training_program
   end
+
+  def grammar
+    @grammar_nouns = Grammar.where(basis: 'Іменник (The Noun)')
+    @grammar_adjectives = Grammar.where(basis: 'Прикметник (The Adjective)')
+    @grammar_numerals = Grammar.where(basis: 'Числівник (The Numeral)')
+
+    # @g = ->(x) { x.map{ |y| y.name.join('\n') }}
+  end
 end

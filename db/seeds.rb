@@ -371,5 +371,52 @@ Answer.create(content:'will have finished', question_id:62, isright: true)
 Answer.create(content:'will finish', question_id:62)
 Answer.create(content:'will finished', question_id:62)
 
-Grammar.create(name: '', content: '', basis:)
+Grammar.create(
+  basis: 'Іменник (The Noun)',
+  name: 'Артикль',
+  content:
+'Артикль є одним з визначників іменника і ставиться перед іменником або перед словами,
+які є визначеннями до нього.
+<b> Невизначений артикль a </b> (an - перед словами, що починаються з голосної) походить від числівника one і означає
+один з багатьох, якийсь, будь-хто.
+<p><b>I am a student</b>. <i>Я студент</i> (один з багатьох).</p>
+<p><b>This is an apple</b>. <i>Це - яблуко</i> щось одне з багатьох).</p>'
+)
+
+Grammar.create(
+  name: 'Утворення множини іменників',
+  basis: 'Іменник (The Noun)',
+  content: '<b>Утворення множини іменників</b>'
+)
+
+Grammar.create(
+  name: 'Конверсія',
+  basis: 'Іменник (The Noun)',
+  content: '<b>Конверсія</b>'
+)
+
+Grammar.create(
+  basis: 'Прикметник (The Adjective)',
+  name: 'Конструкції з порівняльною ступенем прикметника',
+  content: '<b>Конструкції з порівняльною ступенем прикметника</b>'
+)
+
+Grammar.create(
+  basis: 'Числівник (The Numeral)',
+  name: 'Кількісні числівники',
+  content: '<b>Кількісні числівники</b>'
+)
+
+Grammar.create(
+  basis: 'Числівник (The Numeral)',
+  name: 'Порядкові числівники',
+  content: '<b>Порядкові числівники</b>'
+)
+
+Grammar.create(
+  basis: 'Числівник (The Numeral)',
+  name: 'Дроби',
+  content: '<b>Дроби</b>'
+)
+
 
