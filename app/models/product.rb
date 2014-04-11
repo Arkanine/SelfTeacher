@@ -22,7 +22,7 @@ private
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ? OR author LIKE ?', "%#{search}%", "%#{search}%"])
+      find(:all, :conditions => ['title ILIKE ? OR author ILIKE ?', "%#{search}%", "%#{search}%"])
     else
       find(:all)
     end

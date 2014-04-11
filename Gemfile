@@ -49,5 +49,9 @@ gem 'carrierwave'
 
 gem 'soundmanager2-rails'
 
+gem 'russian', '~> 0.6.0'
+
+
+
 
 
