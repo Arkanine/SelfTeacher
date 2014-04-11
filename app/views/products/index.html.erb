@@ -1,34 +1,29 @@
-
 <div id='teach_pages' class="row">
   <div class="col-md-1"></div>
   <div class="col-md-3">
-
+    <%= render 'static_pages/left_menue' %>
   </div>
 
   <div id='central_col' class="col-md-7">
-    <h4 class='level_h4'>Каталог книг</h4>
+    <h4 class='level_h4'>Результат пошуку</h4>
     <div class='levels_content'>
-      <h1>Listing products</h1>
 
-      <table>
-        <% @products.each do |product| %>
-            <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-              <td>
-                <%= image_tag(product.image_url, size:'100x150') %>
-              </td>
+      <% @products.each do |product| %>
+        <div class='search_product_list'>
+          <div class='product_image'>
+            <%= image_tag product.image_url(:thumb).to_s, size:'100x150' %>
+          </div>
 
-              <td class="list_description">
-                <dl>
-                  <dt><%= product.title %></dt>
-                  <dd><%= (strip_tags(product.description)) %></dd>
-                  <span class="price"><%= number_to_currency(product.price) %></span>
-                  <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
-                </dl>
-              </td>
-            </tr>
-        <% end %>
-      </table>
-      <%= link_to 'New product', new_product_path %>
+          <div class='info_content'>
+            <h4><%= link_to product.title, product %></h4>
+            <p><b>Автор: </b><%= product.author %></p>
+            <p><b>Від видавництва: </b><%= sanitize(product.description) %></p>
+            <p><b>Вартість: </b><span class="price"><%= product.price %> грн.</span></p>
+            <%= button_to 'До корзини', line_items_path(product_id: product), class:'btn btn-primary btn-xlarge' %>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
   <div class="col-md-1"></div>

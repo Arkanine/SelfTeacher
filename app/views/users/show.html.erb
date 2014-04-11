@@ -1,21 +1,22 @@
-<div class="row">
+<div id='teach_pages' class="row">
   <div class="col-md-2"></div>
 
   <div id='central_col' class="col-md-8">
-    <div>
+    <h4 class='level_h4'>Сторінка користувача</h4>
+    <div id='user_page_content'>
       <%= gravatar_for @user %>
-      <%= @user.name%>
-    </div>
+      <%= @user.name %>
 
-    <% if @user.topics.any? %>
-        <h3>Теми (<%= @user.topics.count %>)</h3>
+      <% if @user.topics.any? %>
+        <h4>Теми (<%= @user.topics.count %>)</h4>
         <ol class="topics">
           <% for topic in @user.topics %>
             <li><%= link_to topic.name, topic %></li>
           <% end %>
         </ol>
+      <% end %>
 
-    <% end %>
+    </div>
   </div>
 
   <div class="col-md-2"></div>
