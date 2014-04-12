@@ -2,12 +2,11 @@
   <%= f.hidden_field :parent_id %>
 
   <div class="form-group">
-    <%= f.text_area :content, rows: '5', placeholder: 'Content', class: 'form-control' %>
+    <%= f.text_area :content, rows: '5', placeholder: 'Введіть текст ...', class: 'form-control' %>
   </div>
 
   <%= f.hidden_field :rubric_id, :value => @topic.rubric_id %>
 
-  <div class="form-group">
-    <%= f.submit 'Comment' , class: 'btn btn-primary' %>
-  </div>
+  <%= f.submit 'Відповісти' , class: 'btn btn-primary' %>
+
 <% end %>

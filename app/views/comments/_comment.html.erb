@@ -14,7 +14,7 @@
 
     <% if current_user %>
       <div class='comment_time_reply'>
-        <%= link_to 'comment', new_topic_comment_path(parent_id: comment, topic_id: @topic.id) %>
+        <%= link_to '-> коментувати', new_topic_comment_path(parent_id: comment, topic_id: @topic.id) %>
       </div>
     <% end %>
   </div>
