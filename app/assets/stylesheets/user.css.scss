@@ -1,8 +1,8 @@
 #central_col {
   padding-bottom: 15px;
-
   #user_page_content {
     list-style-type: none;
+    min-height: 150px;
 
     padding: 10px 20px;
     background-color: white;
@@ -10,5 +10,20 @@
     border-radius: 6px;
     -moz-border-radius: 6px;
     -khtml-border-radius: 6px;
+
+    .user_image {
+      float: left;
+      border: 1px solid #DEDEDE;
+      background-color: #F3F3F3;
+      padding: 5px;
+
+      border-radius: 6px;
+      -moz-border-radius: 6px;
+      -khtml-border-radius: 6px;
+    }
+
+    .info_content {
+      margin-left: 110px;
+    }
   }
 }

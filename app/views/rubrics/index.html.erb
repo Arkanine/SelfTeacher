@@ -1,24 +1,22 @@
 <% provide(:title, 'Forum') %>
 
-<div class="row">
+<div id='rubrics' class="row">
   <div class="col-md-2"></div>
   <div id='central_col' class="col-md-8">
     <div class='article-format'>
 
-    <h4>Рубрики</h4>
-
     <div class="panel panel-default">
-      <div class="panel-heading">Panel heading</div>
+      <div class="panel-heading"><h4>Форум</h4></div>
 
       <table class="table">
 
         <thread>
           <tr>
             <th width="5%"></th>
-            <th width="40%">Forum</th>
-            <th width="10%">Topics</th>
-            <th width="10%">Comments</th>
-            <th width="40%">Last Comment</th>
+            <th width="40%">Рубрики</th>
+            <th width="10%">Теми</th>
+            <th width="10%">Коментарі</th>
+            <th width="40%">Останній коментар</th>
           </tr>
         </thread>
 
@@ -35,16 +33,16 @@
                   <% comments = rubric.comments %>
                   <%= link_to comments.last.topic.name, comments.last.topic %><br>
                   <span class='comment_time'>
-                    <%= distance_of_time_in_words_to_now comments.last.created_at %> ago by
+                    <%= comments.last.created_at.strftime('%d.%m.%Y в %H:%M') %>, автор:
                     <%= link_to comments.last.user.name, comments.last.user %>
                   </span>
                 <% elsif %>
                   <% if rubric.topics.any? %>
                     <%= link_to rubric.topics.last.name, rubric.topics.last %><br>
-                    <span class='comment_time'>This topic has no comments</span>
+                    <span class='comment_time'>тема не містить коментаріїв</span>
                   <% end %>
                 <% else %>
-                  <span class='comment_time'>Empty</span>
+                  <span class='comment_time'>пусто</span>
                 <% end %>
               </td>
             </tr>

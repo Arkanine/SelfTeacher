@@ -97,6 +97,12 @@ body {
   margin-top:7px;
 }
 
+.gravatar {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -khtml-border-radius: 6px;
+}
+
 @import "carts";
 @import "forum";
 @import "store";

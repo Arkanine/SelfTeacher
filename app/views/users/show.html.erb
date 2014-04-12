@@ -4,20 +4,29 @@
   <div id='central_col' class="col-md-8">
     <h4 class='level_h4'>Сторінка користувача</h4>
     <div id='user_page_content'>
-      <%= gravatar_for @user %>
-      <%= @user.name %>
 
-      <% if @user.topics.any? %>
-        <h4>Теми (<%= @user.topics.count %>)</h4>
-        <ol class="topics">
-          <% for topic in @user.topics %>
-            <li><%= link_to topic.name, topic %></li>
-          <% end %>
-        </ol>
-      <% end %>
+      <div class='user_image'>
+        <%= gravatar_for @user %>
+      </div>
+
+      <div class='info_content'>
+        <h4><%= @user.name %></h4>
+        <hr>
+        <p>Email: <%= @user.email %></p>
+
+        <% if @user.topics.any? %>
+          <h5>Теми форуму(<%= @user.topics.count %>):</h5>
+          <ol class="topics">
+            <% for topic in @user.topics %>
+              <li><%= link_to topic.name, topic %></li>
+            <% end %>
+          </ol>
+        <% end %>
+      </div>
 
     </div>
   </div>
 
   <div class="col-md-2"></div>
 </div>
+

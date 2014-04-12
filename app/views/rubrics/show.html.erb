@@ -4,25 +4,25 @@
   <div class="col-md-2"></div>
 
   <div id='central_col' class="col-md-8">
-    <h4><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h4>
 
     <div class="panel panel-default">
-      <div class="panel-heading"><%= @rubric.body %></div>
+      <div class="panel-heading">
+        <h4><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h4>
+      </div>
+
       <table class="table">
         <thread>
           <tr>
             <th width="5%"></th>
-            <th width="40%">Topics</th>
-            <th width="15%">Comments</th>
-            <th width="30%">Last Comment</th>
+            <th width="40%">Теми</th>
+            <th width="15%">Коментарі</th>
+            <th width="30%">Останній коментар</th>
             <th width="10%"></th>
           </tr>
         </thread>
-
         <% if @topics.where(rubric_id: @rubric.id).any? %>
           <% topics = @topics.where(rubric_id: @rubric.id) %>
           <% topics.each do |t| %>
-
             <tbody>
               <tr>
                 <td align='center'><span class="glyphicon glyphicon-share-alt"></span></td>
@@ -32,32 +32,28 @@
                 <td>
                 <% if t.comments.any? %>
                 <% comments = t.comments %>
-                  <span class='comment_time'><%= distance_of_time_in_words_to_now comments.last.created_at %> ago by</span>
+                  <span class='comment_time'><%= comments.last.created_at.strftime('%d.%m.%Y в %H:%M') %>, автор:</span>
                   <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
                 <% else %>
-                  <span class='comment_time'>topic has no comments</span>
+                  <span class='comment_time'>тема не містить коментаріїв</span>
                 <% end %>
                 </td>
                 <td align='center'>
                   <% if t.user == current_user %>
                     <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
-                    <%= link_to '', t, method: :delete, data: { confirm: 'Точно-точно?' }, class:'glyphicon glyphicon-trash' %>
+                    <%= link_to '', t, method: :delete, data: { confirm: 'Видалити?' }, class:'glyphicon glyphicon-trash' %>
                   <% end %>
                 </td>
               </tr>
             </tbody>
-
           <% end %>
         <% end %>
-
       </table>
-    </div>
 
-    <p>
-      <% if current_user %>
-        <%= link_to 'New topic', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
-      <% end %>
-    </p>
+    </div>
+    <% if current_user %>
+      <%= link_to 'Нова тема', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
+    <% end %>
   </div>
 
   <div class="col-md-2"></div>
