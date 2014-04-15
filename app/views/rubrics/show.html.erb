@@ -10,19 +10,19 @@
         <h4><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h4>
       </div>
 
-      <table class="table">
-        <thread>
-          <tr>
-            <th width="5%"></th>
-            <th width="40%">Теми</th>
-            <th width="15%">Коментарі</th>
-            <th width="30%">Останній коментар</th>
-            <th width="10%"></th>
-          </tr>
-        </thread>
-        <% if @topics.where(rubric_id: @rubric.id).any? %>
-          <% topics = @topics.where(rubric_id: @rubric.id) %>
-          <% topics.each do |t| %>
+      <% if @topics.where(rubric_id: @rubric.id).any? %>
+        <% @topics.each do |t| %>
+
+          <table class="table">
+            <thread>
+              <tr>
+                <th width="5%"></th>
+                <th width="40%">Теми</th>
+                <th width="15%">Коментарі</th>
+                <th width="30%">Останній коментар</th>
+                <th width="10%"></th>
+              </tr>
+            </thread>
             <tbody>
               <tr>
                 <td align='center'><span class="glyphicon glyphicon-share-alt"></span></td>
@@ -30,13 +30,13 @@
                   <%=h t.content %></td>
                 <td><%= t.comments.count %></td>
                 <td>
-                <% if t.comments.any? %>
-                <% comments = t.comments %>
-                  <span class='comment_time'><%= comments.last.created_at.strftime('%d.%m.%Y в %H:%M') %>, автор:</span>
-                  <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
-                <% else %>
-                  <span class='comment_time'>тема не містить коментаріїв</span>
-                <% end %>
+                  <% if t.comments.any? %>
+                    <% comments = t.comments %>
+                      <span class='comment_time'><%= comments.last.created_at.strftime('%d.%m.%Y в %H:%M') %>, автор:</span>
+                      <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
+                  <% else %>
+                      <span class='comment_time'>тема не містить коментаріїв</span>
+                  <% end %>
                 </td>
                 <td align='center'>
                   <% if t.user == current_user %>
@@ -46,11 +46,12 @@
                 </td>
               </tr>
             </tbody>
-          <% end %>
+          </table>
         <% end %>
-      </table>
-
+      <% end %>
     </div>
+
+    <span id='rubric_show_pagin'><%= paginate @topics %></span>
     <% if current_user %>
       <%= link_to 'Нова тема', new_rubric_topic_path(@rubric.id), class: 'btn btn-primary' %>
     <% end %>

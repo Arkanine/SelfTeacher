@@ -7,7 +7,7 @@ class RubricsController < ApplicationController
 
   def show
     @rubric = Rubric.find(params[:id])
-    @topics = Topic.all
+    @topics = @rubric.topics.page(params[:page]).per(3)
     @comments = Comment.all
   end
 end
