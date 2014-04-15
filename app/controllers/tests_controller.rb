@@ -2,7 +2,6 @@ class TestsController < ApplicationController
   before_action :set_test, only: [:show, :destroy]
 
   def index
-    @tests = Test.all
     @question_count = Question.all.count
     @result_count = Result.where(score:1).count
     @errors = Result.where(score:nil)

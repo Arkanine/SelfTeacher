@@ -10,45 +10,46 @@
         <h4><%= link_to 'Рубрики', rubrics_path %> > <%= @rubric.name %></h4>
       </div>
 
-      <% if @topics.where(rubric_id: @rubric.id).any? %>
-        <% @topics.each do |t| %>
+      <table class="table">
+        <thread>
+          <tr>
+            <th width="5%"></th>
+            <th width="40%">Теми</th>
+            <th width="15%">Коментарі</th>
+            <th width="30%">Останній коментар</th>
+            <th width="10%"></th>
+          </tr>
+        </thread>
+          <% if @topics.where(rubric_id: @rubric.id).any? %>
+            <% @topics.each do |t| %>
 
-          <table class="table">
-            <thread>
-              <tr>
-                <th width="5%"></th>
-                <th width="40%">Теми</th>
-                <th width="15%">Коментарі</th>
-                <th width="30%">Останній коментар</th>
-                <th width="10%"></th>
-              </tr>
-            </thread>
-            <tbody>
-              <tr>
-                <td align='center'><span class="glyphicon glyphicon-share-alt"></span></td>
-                <td><%= link_to h(t.name), t %><br>
-                  <%=h t.content %></td>
-                <td><%= t.comments.count %></td>
-                <td>
-                  <% if t.comments.any? %>
-                    <% comments = t.comments %>
-                      <span class='comment_time'><%= comments.last.created_at.strftime('%d.%m.%Y в %H:%M') %>, автор:</span>
-                      <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
-                  <% else %>
-                      <span class='comment_time'>тема не містить коментаріїв</span>
-                  <% end %>
-                </td>
-                <td align='center'>
-                  <% if t.user == current_user %>
-                    <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
-                    <%= link_to '', t, method: :delete, data: { confirm: 'Видалити?' }, class:'glyphicon glyphicon-trash' %>
-                  <% end %>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr>
+                  <td align='center'><span class="glyphicon glyphicon-share-alt"></span></td>
+                  <td><%= link_to h(t.name), t %><br>
+                    <%=h t.content %></td>
+                  <td><%= t.comments.count %></td>
+                  <td>
+                    <% if t.comments.any? %>
+                      <% comments = t.comments %>
+                        <span class='comment_time'><%= comments.last.created_at.strftime('%d.%m.%Y в %H:%M') %>, автор:</span>
+                        <span class='comment_time'><%= link_to comments.last.user.name, comments.last.user %></span>
+                    <% else %>
+                          <span class='comment_time'>тема не містить коментаріїв</span>
+                    <% end %>
+                  </td>
+                  <td align='center'>
+                    <% if t.user == current_user %>
+                      <%= link_to '', edit_topic_path(t), class:'glyphicon glyphicon-pencil' %> |
+                      <%= link_to '', t, method: :delete, data: { confirm: 'Видалити?' }, class:'glyphicon glyphicon-trash' %>
+                    <% end %>
+                  </td>
+                </tr>
+              </tbody>
+
+          <% end %>
         <% end %>
-      <% end %>
+      </table>
     </div>
 
     <span id='rubric_show_pagin'><%= paginate @topics %></span>
