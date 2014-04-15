@@ -1,15 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
 
-  def index
-    @comments = Comment.search(params[:search])
-    if @comments.class == Array
-      @comments = Kaminari.paginate_array(@comments).page(params[:page]).per(5)
-    else
-      @comments = @comments.page(params[:page]).per(5)
-    end
-  end
-
   def new
     @topic = Topic.find(params[:topic_id])
     @comment = Comment.new(parent_id: params[:parent_id], user_id: current_user.id)

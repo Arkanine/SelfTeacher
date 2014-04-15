@@ -22,9 +22,8 @@ Teacher::Application.routes.draw do
   resources :categories, only: [:show]
   resources :products
   
-  resources :orders do
+  resources :orders, only: [:show, :new, :create, :index, :destroy] do
     get 'confirm/:order', to: 'orders#confirm'
-
   end
 
   resources :line_items

@@ -1,12 +1,6 @@
 class Lesson < ActiveRecord::Base
+  validates_presence_of :name, :content, :level_id
+
   has_many :exercises
   belongs_to :level
-
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
-  end
 end

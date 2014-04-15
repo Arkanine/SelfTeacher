@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
     @topic = rubric.topics.new(topic_params)
     @topic.user = current_user
     if @topic.save
-      redirect_to @topic, notice: 'Тема обновлена.'
+      redirect_to @topic
     else
       render new_path
     end
@@ -32,7 +32,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
-      redirect_to @topic, notice: 'Topic updated'
+      redirect_to @topic
     else
       render edit_path
     end
@@ -53,6 +53,6 @@ class TopicsController < ApplicationController
   end
 
   def check_user
-    redirect_to rubrics_url, notice: 'Нельзя :)' if @topic.user != current_user
+    redirect_to rubrics_url if @topic.user != current_user
   end
 end

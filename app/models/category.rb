@@ -1,6 +1,5 @@
 class Category < ActiveRecord::Base
+  validates_presence_of :name
 
 	has_many :products
-	validates_presence_of :name
-  	
 end

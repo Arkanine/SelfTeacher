@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-
   def show
     begin
       @cart = Cart.find(params[:id])
@@ -17,5 +16,4 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     redirect_to store_url
   end
-
 end

@@ -1,4 +1,6 @@
 class Grammar < ActiveRecord::Base
+  validates_presence_of :basis, :name, :content
+
   private
   def self.search(search)
     if search
