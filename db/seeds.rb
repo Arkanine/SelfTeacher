@@ -37,8 +37,6 @@ Category.create(name:'Дитяча література')
 Category.create(name:'Англійська граматика')
 Category.create(name:'Словники')
 
-Track.create(name:'noname', sound:'http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3')
-
 User.create(name:'Zabila Roman', email:'zabila.r@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 User.create(name:'Zabila Ira', email:'zabila.i@ya.ru', password:'aaazzz', password_confirmation:'aaazzz')
 

@@ -4,15 +4,14 @@ Teacher::Application.routes.draw do
 
   # teach routes
   resources :levels, only: [:show] do
-    resources :lessons
+    resources :lessons, only: [:show, :index]
   end
 
   resources :lessons, only: [:show, :index]
-  resources :tracks
   resources :grammars, only: [:show, :index]
 
   # users & sessions_routes
-  resources :users
+  resources :users, only: [:new, :create, :edit, :update, :show]
   resources :sessions, only: [:new, :create, :destroy]
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
@@ -26,12 +25,12 @@ Teacher::Application.routes.draw do
     get 'confirm/:order', to: 'orders#confirm'
   end
 
-  resources :line_items
+  resources :line_items, only: [:new, :create]
   resources :carts, only: [:show, :destroy]
 
   # forum routes
   resources :rubrics, only: [:show, :index] do
-    resources :topics
+    resources :topics, only: [:show, :new, :create, :edit, :update, :destroy]
   end
 
   resources :topics do
@@ -41,7 +40,7 @@ Teacher::Application.routes.draw do
   resources :comments, only: [:new, :create]
 
   # test routes
-  resources :tests, only: [:new, :create, :destroy, :index, :show] do
+  resources :tests, only: [:destroy, :index, :show] do
     member do
       post 'send_results' => 'tests#send_results'
     end
