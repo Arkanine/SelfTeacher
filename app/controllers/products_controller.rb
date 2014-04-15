@@ -1,34 +1,23 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  # GET /products
-  # GET /products.json
+
   def index
     @products = Product.search(params[:search])
-        #@writing = Product.where(category_id: params[:category]).last
-       # @reading = Product.where(category_id: params[:category]).first
-        #     !!!!!!!!!!  ИЛИ  !!!!!!!!!!!!!!
-        #@grammar = Product.where(category_id: 3)
   end
 
-  # GET /products/1
-  # GET /products/1.json
   def show
     @cart = current_cart
     @products = Product.all
   end
 
-  # GET /products/new
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
   def edit
   end
 
-  # POST /products
-  # POST /products.json
   def create
     @product = Product.new(product_params)
     @product.category = Category.find(params[:category_id]) if params[:category_id]
@@ -44,8 +33,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -58,8 +45,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
   def destroy
     @product.destroy
     respond_to do |format|
@@ -69,12 +54,11 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_product
       @product = Product.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :author, :edition, :description, :image, :price, :remote_image_url, :category_id)
     end

@@ -35,13 +35,13 @@ Teacher::Application.routes.draw do
   end
 
   resources :topics do
-    resources :comments
+    resources :comments, only: [:new, :create]
   end
 
-  resources :comments
+  resources :comments, only: [:new, :create]
 
   # test routes
-  resources :tests do
+  resources :tests, only: [:new, :create, :destroy, :index, :show] do
     member do
       post 'send_results' => 'tests#send_results'
     end

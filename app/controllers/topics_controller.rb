@@ -44,15 +44,16 @@ class TopicsController < ApplicationController
   end
 
   private
-  def topic_params
-    params.require(:topic).permit(:name, :content, :rubric_id)
-  end
 
-  def set_topic
-    @topic = Topic.find(params[:id])
-  end
+    def topic_params
+      params.require(:topic).permit(:name, :content, :rubric_id)
+    end
 
-  def check_user
-    redirect_to rubrics_url if @topic.user != current_user
-  end
+    def set_topic
+      @topic = Topic.find(params[:id])
+    end
+
+    def check_user
+      redirect_to rubrics_url if @topic.user != current_user
+    end
 end
